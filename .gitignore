@@ -9,8 +9,9 @@ __pycache__/
 venv/
 *.egg-info/
 
-# Local / logs
+# Local / logs / bază de date (nu pe GitHub)
 data/bot.log
+data/*.db
 *.db-journal
 
 # IDE
