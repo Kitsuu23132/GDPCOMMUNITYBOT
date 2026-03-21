@@ -1,0 +1,1614 @@
+2026-03-10 16:40:39,483 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2026-03-10 16:40:39,484 [INFO] discord.client: logging in using static token
+2026-03-10 16:40:40,221 [INFO] GDP-Bot: Initializing database...
+2026-03-10 16:40:40,397 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 16:40:40,405 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 16:40:40,412 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 16:40:40,422 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 16:40:40,431 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 16:40:40,439 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 16:40:40,453 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 16:40:40,593 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 16:40:40,877 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 16:40:40,877 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 16:40:41,677 [INFO] GDP-Bot: Synced 65 slash commands
+2026-03-10 16:40:42,362 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: d341a08be40d10e462be23cfbcae7a72).
+2026-03-10 16:40:44,406 [INFO] GDP-Bot: Logged in as GDP SUPPORT#5461 (ID: 1452813175572398333)
+2026-03-10 21:04:24,827 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2026-03-10 21:04:24,828 [INFO] discord.client: logging in using static token
+2026-03-10 21:04:25,950 [INFO] GDP-Bot: Initializing database...
+2026-03-10 21:04:25,994 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 21:04:26,004 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 21:04:26,010 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 21:04:26,018 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 21:04:26,024 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 21:04:26,032 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 21:04:26,042 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 21:04:26,049 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 21:04:26,057 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 21:04:26,057 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 21:04:26,465 [INFO] GDP-Bot: Synced 65 slash commands
+2026-03-10 21:04:27,171 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 4e8ae3bbbb265197fd982fab433fcfe8).
+2026-03-10 21:04:29,203 [INFO] GDP-Bot: Logged in as GDP SUPPORT#5461 (ID: 1452813175572398333)
+2026-03-10 21:17:01,777 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2026-03-10 21:17:01,777 [INFO] discord.client: logging in using static token
+2026-03-10 21:17:02,801 [INFO] GDP-Bot: Initializing database...
+2026-03-10 21:17:02,837 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 21:17:02,847 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 21:17:02,855 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 21:17:02,863 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 21:17:02,868 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 21:17:02,879 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 21:17:02,888 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 21:17:02,896 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 21:17:02,907 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 21:17:02,918 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 21:17:02,918 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 21:17:03,386 [INFO] GDP-Bot: Synced 71 slash commands
+2026-03-10 21:17:04,155 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: ba4d7e3f8225de43825cef3ddb0e86e1).
+2026-03-10 21:17:06,197 [INFO] GDP-Bot: Logged in as GDP SUPPORT#5461 (ID: 1452813175572398333)
+2026-03-10 21:39:37,379 [INFO] discord.client: logging in using static token
+2026-03-10 21:39:38,099 [INFO] GDP-Bot: Initializing database...
+2026-03-10 21:39:38,293 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 21:39:38,295 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 21:39:38,301 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 21:39:38,303 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 21:39:38,304 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 21:39:38,307 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 21:39:38,309 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 21:39:38,311 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 21:39:38,314 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 21:39:38,316 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 21:39:38,591 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 21:39:38,599 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 21:39:38,605 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 21:39:38,611 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 21:39:38,616 [ERROR] GDP-Bot: Failed to load cogs.suggestions: Extension 'cogs.suggestions' raised an error: TypeError: button() got an unexpected keyword argument 'custom_id_prefix'
+2026-03-10 21:39:38,623 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 21:39:38,628 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 21:39:38,635 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 21:39:38,642 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 21:39:38,642 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 21:39:39,784 [INFO] GDP-Bot: Synced 99 slash commands
+2026-03-10 21:39:40,439 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 91c264a792fec608f8656b84f87e9515).
+2026-03-10 21:39:42,478 [INFO] GDP-Bot: Logged in as GDP SUPPORT#5461 (ID: 1452813175572398333)
+2026-03-10 21:40:19,266 [INFO] discord.client: logging in using static token
+2026-03-10 21:40:19,970 [INFO] GDP-Bot: Initializing database...
+2026-03-10 21:40:19,989 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 21:40:19,991 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 21:40:19,994 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 21:40:19,997 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 21:40:19,999 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 21:40:20,002 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 21:40:20,005 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 21:40:20,007 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 21:40:20,010 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 21:40:20,013 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 21:40:20,147 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 21:40:20,150 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 21:40:20,152 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 21:40:20,153 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 21:40:20,155 [ERROR] GDP-Bot: Failed to load cogs.suggestions: Extension 'cogs.suggestions' raised an error: TypeError: button() got an unexpected keyword argument 'custom_id_prefix'
+2026-03-10 21:40:20,157 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 21:40:20,158 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 21:40:20,160 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 21:40:20,162 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 21:40:20,162 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 21:40:20,856 [INFO] GDP-Bot: Synced 99 slash commands
+2026-03-10 21:40:21,509 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: fcaebaae363fed2b514835aa0ec2fe1a).
+2026-03-10 21:40:23,558 [INFO] GDP-Bot: Logged in as GDP SUPPORT#5461 (ID: 1452813175572398333)
+2026-03-10 21:41:16,705 [INFO] discord.client: logging in using static token
+2026-03-10 21:41:17,280 [INFO] GDP-Bot: Initializing database...
+2026-03-10 21:41:17,298 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 21:41:17,300 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 21:41:17,302 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 21:41:17,305 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 21:41:17,306 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 21:41:17,308 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 21:41:17,310 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 21:41:17,312 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 21:41:17,315 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 21:41:17,317 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 21:41:17,528 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 21:41:17,530 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 21:41:17,532 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 21:41:17,534 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 21:41:17,541 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 21:41:17,543 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 21:41:17,545 [ERROR] GDP-Bot: Failed to load cogs.reminders: Extension 'cogs.reminders' raised an error: CommandLimitReached: maximum number of slash commands exceeded 100 globally
+2026-03-10 21:41:17,547 [ERROR] GDP-Bot: Failed to load cogs.antiraid: Extension 'cogs.antiraid' raised an error: CommandLimitReached: maximum number of slash commands exceeded 100 globally
+2026-03-10 21:41:17,549 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 21:41:17,549 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 21:41:18,101 [INFO] GDP-Bot: Synced 100 slash commands
+2026-03-10 21:41:18,944 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 0c133ad1dc86a9bf8e3ba73260a14295).
+2026-03-10 21:41:20,972 [INFO] GDP-Bot: Logged in as GDP SUPPORT#5461 (ID: 1452813175572398333)
+2026-03-10 21:43:35,126 [INFO] discord.client: logging in using static token
+2026-03-10 21:43:35,707 [INFO] GDP-Bot: Initializing database...
+2026-03-10 21:43:35,725 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 21:43:35,727 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 21:43:35,729 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 21:43:35,732 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 21:43:35,734 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 21:43:35,736 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 21:43:35,738 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 21:43:35,740 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 21:43:35,742 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 21:43:35,745 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 21:43:35,879 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 21:43:35,881 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 21:43:35,883 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 21:43:35,888 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 21:43:35,891 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 21:43:35,892 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 21:43:35,897 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 21:43:35,901 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 21:43:35,903 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 21:43:35,903 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 21:43:36,478 [INFO] GDP-Bot: Synced 98 slash commands
+2026-03-10 21:43:37,318 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 6b47b6eabe39cf6db50fafa610e3b37f).
+2026-03-10 21:43:39,345 [INFO] GDP-Bot: Logged in as GDP SUPPORT#5461 (ID: 1452813175572398333)
+2026-03-10 21:44:28,970 [ERROR] discord.app_commands.tree: Ignoring exception in command 'lock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 261, in lock
+    await interaction.response.send_message(embed=success_embed("🔒 Canal blocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'lock' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 21:44:28,973 [ERROR] discord.app_commands.tree: Ignoring exception in command 'lock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 261, in lock
+    await interaction.response.send_message(embed=success_embed("🔒 Canal blocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'lock' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 21:44:35,621 [ERROR] discord.app_commands.tree: Ignoring exception in command 'unlock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 269, in unlock
+    await interaction.response.send_message(embed=success_embed("🔓 Canal deblocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'unlock' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 21:44:35,787 [ERROR] discord.app_commands.tree: Ignoring exception in command 'unlock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 269, in unlock
+    await interaction.response.send_message(embed=success_embed("🔓 Canal deblocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 226, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'unlock' raised an exception: HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+2026-03-10 21:45:19,103 [INFO] discord.client: logging in using static token
+2026-03-10 21:45:19,678 [INFO] GDP-Bot: Initializing database...
+2026-03-10 21:45:19,692 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 21:45:19,694 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 21:45:19,696 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 21:45:19,698 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 21:45:19,700 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 21:45:19,702 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 21:45:19,704 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 21:45:19,706 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 21:45:19,708 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 21:45:19,710 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 21:45:19,715 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 21:45:19,838 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 21:45:19,841 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 21:45:19,843 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 21:45:19,845 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 21:45:19,847 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 21:45:19,849 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 21:45:19,850 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 21:45:19,852 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 21:45:19,854 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 21:45:19,854 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 21:45:21,274 [INFO] GDP-Bot: Synced 99 slash commands
+2026-03-10 21:45:21,887 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 408774645e57a351ed5ef677d9f9e8b2).
+2026-03-10 21:45:23,933 [INFO] GDP-Bot: Logged in as GDP SUPPORT#5461 (ID: 1452813175572398333)
+2026-03-10 21:48:00,184 [ERROR] discord.app_commands.tree: Ignoring exception in command 'lock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 261, in lock
+    await interaction.response.send_message(embed=success_embed("🔒 Canal blocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'lock' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 21:48:00,221 [ERROR] discord.app_commands.tree: Ignoring exception in command 'lock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 261, in lock
+    await interaction.response.send_message(embed=success_embed("🔒 Canal blocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'lock' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 21:48:21,700 [ERROR] discord.app_commands.tree: Ignoring exception in command 'unlock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 269, in unlock
+    await interaction.response.send_message(embed=success_embed("🔓 Canal deblocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'unlock' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 21:48:21,745 [ERROR] discord.app_commands.tree: Ignoring exception in command 'unlock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 269, in unlock
+    await interaction.response.send_message(embed=success_embed("🔓 Canal deblocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'unlock' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 21:48:21,752 [ERROR] discord.app_commands.tree: Ignoring exception in command 'unlock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 269, in unlock
+    await interaction.response.send_message(embed=success_embed("🔓 Canal deblocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'unlock' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 21:49:43,190 [INFO] discord.client: logging in using static token
+2026-03-10 21:49:43,785 [INFO] GDP-Bot: Initializing database...
+2026-03-10 21:49:43,799 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 21:49:43,801 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 21:49:43,803 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 21:49:43,806 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 21:49:43,807 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 21:49:43,809 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 21:49:43,812 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 21:49:43,814 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 21:49:43,816 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 21:49:43,819 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 21:49:43,820 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 21:49:43,954 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 21:49:43,957 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 21:49:43,958 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 21:49:43,961 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 21:49:43,963 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 21:49:43,964 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 21:49:43,966 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 21:49:43,968 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 21:49:43,970 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 21:49:43,970 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 21:49:44,609 [INFO] GDP-Bot: Synced 99 slash commands
+2026-03-10 21:49:45,230 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 023aead0a3ac76fbfe1f44c7deb88d38).
+2026-03-10 21:49:47,290 [INFO] GDP-Bot: Logged in as GDP SUPPORT#5461 (ID: 1452813175572398333)
+2026-03-10 21:53:45,699 [ERROR] discord.client: Ignoring exception in on_member_remove
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\welcome.py", line 85, in on_member_remove
+    await ch.send(embed=e)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\http.py", line 767, in request
+    raise Forbidden(response, data)
+discord.errors.Forbidden: 403 Forbidden (error code: 50001): Missing Access
+2026-03-10 21:59:38,084 [INFO] discord.client: logging in using static token
+2026-03-10 21:59:38,724 [INFO] GDP-Bot: Initializing database...
+2026-03-10 21:59:38,740 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 21:59:38,742 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 21:59:38,744 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 21:59:38,747 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 21:59:38,749 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 21:59:38,751 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 21:59:38,754 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 21:59:38,756 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 21:59:38,759 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 21:59:38,762 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 21:59:38,764 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 21:59:38,924 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 21:59:38,927 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 21:59:38,929 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 21:59:38,931 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 21:59:38,933 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 21:59:38,935 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 21:59:38,938 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 21:59:38,939 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 21:59:38,941 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 21:59:38,942 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 21:59:42,778 [INFO] GDP-Bot: Synced 99 slash commands
+2026-03-10 22:02:27,080 [INFO] discord.client: logging in using static token
+2026-03-10 22:02:27,721 [INFO] GDP-Bot: Initializing database...
+2026-03-10 22:02:27,746 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 22:02:27,748 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 22:02:27,750 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 22:02:27,753 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 22:02:27,754 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 22:02:27,757 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 22:02:27,759 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 22:02:27,761 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 22:02:27,763 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 22:02:27,765 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 22:02:27,767 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 22:02:27,900 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 22:02:27,903 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 22:02:27,905 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 22:02:27,907 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 22:02:27,909 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 22:02:27,911 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 22:02:27,913 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 22:02:27,914 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 22:02:27,917 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 22:02:27,917 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 22:02:28,407 [INFO] GDP-Bot: Synced 99 slash commands
+2026-03-10 22:02:29,063 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: a74d38d92ecb8182bd3d0c4923676868).
+2026-03-10 22:02:31,097 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-10 22:15:31,952 [INFO] discord.client: logging in using static token
+2026-03-10 22:15:32,493 [INFO] GDP-Bot: Initializing database...
+2026-03-10 22:15:32,548 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 22:15:32,553 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 22:15:32,557 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 22:15:32,560 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 22:15:32,563 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 22:15:32,566 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 22:15:32,569 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 22:15:32,571 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 22:15:32,580 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 22:15:32,582 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 22:15:32,589 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 22:15:32,713 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 22:15:32,715 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 22:15:32,717 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 22:15:32,718 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 22:15:32,720 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 22:15:32,722 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 22:15:32,724 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 22:15:32,726 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 22:15:32,728 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 22:15:32,728 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 22:15:33,009 [INFO] GDP-Bot: Synced 0 slash commands to guild 1352620182379565076
+2026-03-10 22:15:33,861 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: c7f5d6fed4c6316c626b312381b9321a).
+2026-03-10 22:15:35,895 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-10 22:20:10,303 [INFO] discord.client: logging in using static token
+2026-03-10 22:20:10,953 [INFO] GDP-Bot: Initializing database...
+2026-03-10 22:20:10,968 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 22:20:10,970 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 22:20:10,972 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 22:20:10,975 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 22:20:10,976 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 22:20:10,979 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 22:20:10,981 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 22:20:10,983 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 22:20:10,985 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 22:20:10,987 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 22:20:10,990 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 22:20:11,126 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 22:20:11,128 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 22:20:11,130 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 22:20:11,132 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 22:20:11,134 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 22:20:11,136 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 22:20:11,138 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 22:20:11,141 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 22:20:11,143 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 22:20:11,143 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 22:20:12,766 [INFO] GDP-Bot: Synced 99 slash commands to guild 1352620182379565076
+2026-03-10 22:20:13,415 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 10fc59889c6ff6081d3c0a78f052256f).
+2026-03-10 22:20:15,443 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-10 22:27:25,763 [INFO] discord.client: logging in using static token
+2026-03-10 22:27:26,362 [INFO] GDP-Bot: Initializing database...
+2026-03-10 22:27:26,382 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 22:27:26,384 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 22:27:26,387 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 22:27:26,389 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 22:27:26,391 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 22:27:26,393 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 22:27:26,396 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 22:27:26,399 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 22:27:26,402 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 22:27:26,405 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 22:27:26,406 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 22:27:26,535 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 22:27:26,538 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 22:27:26,540 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 22:27:26,542 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 22:27:26,545 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 22:27:26,548 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 22:27:26,549 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 22:27:26,551 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 22:27:26,553 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 22:27:26,553 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 22:27:27,004 [INFO] GDP-Bot: Synced 99 slash commands to guild 1352620182379565076
+2026-03-10 22:27:27,810 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: d39c14cc46447c65a93e5bf0ff923b76).
+2026-03-10 22:27:29,857 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-10 22:29:27,775 [INFO] discord.client: logging in using static token
+2026-03-10 22:29:28,315 [INFO] GDP-Bot: Initializing database...
+2026-03-10 22:29:28,329 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 22:29:28,331 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 22:29:28,332 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 22:29:28,334 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 22:29:28,336 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 22:29:28,338 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 22:29:28,340 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 22:29:28,341 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 22:29:28,344 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 22:29:28,346 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 22:29:28,348 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 22:29:28,476 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 22:29:28,478 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 22:29:28,480 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 22:29:28,482 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 22:29:28,484 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 22:29:28,485 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 22:29:28,487 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 22:29:28,489 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 22:29:28,491 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 22:29:28,491 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 22:29:29,031 [INFO] GDP-Bot: Synced 99 slash commands to guild 1352620182379565076
+2026-03-10 22:29:29,752 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 689387eb830dc75fc394a031166ee077).
+2026-03-10 22:29:31,778 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-10 22:31:32,305 [ERROR] discord.app_commands.tree: Ignoring exception in command 'setsuggestionchannel'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\suggestions.py", line 264, in set_suggestion_channel
+    await db.update_guild_setting(interaction.guild.id, "suggestion_channel", channel.id)
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\utils\database.py", line 566, in update_guild_setting
+    await db.execute(
+    ...<2 lines>...
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 223, in execute
+    cursor = await self._execute(self._conn.execute, sql, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+sqlite3.OperationalError: no such column: suggestion_channel
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'setsuggestionchannel' raised an exception: OperationalError: no such column: suggestion_channel
+2026-03-10 22:32:19,924 [ERROR] discord.app_commands.tree: Ignoring exception in command 'setsuggestionchannel'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\suggestions.py", line 264, in set_suggestion_channel
+    await db.update_guild_setting(interaction.guild.id, "suggestion_channel", channel.id)
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\utils\database.py", line 566, in update_guild_setting
+    await db.execute(
+    ...<2 lines>...
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 223, in execute
+    cursor = await self._execute(self._conn.execute, sql, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+sqlite3.OperationalError: no such column: suggestion_channel
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'setsuggestionchannel' raised an exception: OperationalError: no such column: suggestion_channel
+2026-03-10 22:32:35,929 [INFO] discord.client: logging in using static token
+2026-03-10 22:32:36,662 [INFO] GDP-Bot: Initializing database...
+2026-03-10 22:32:36,677 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 22:32:36,679 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 22:32:36,681 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 22:32:36,684 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 22:32:36,685 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 22:32:36,688 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 22:32:36,690 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 22:32:36,691 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 22:32:36,694 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 22:32:36,697 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 22:32:36,699 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 22:32:36,821 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 22:32:36,823 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 22:32:36,825 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 22:32:36,826 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 22:32:36,828 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 22:32:36,830 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 22:32:36,832 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 22:32:36,834 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 22:32:36,836 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 22:32:36,836 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 22:32:37,305 [INFO] GDP-Bot: Synced 99 slash commands to guild 1352620182379565076
+2026-03-10 22:32:37,980 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 250a01d1adce5a643c79389172cf5a33).
+2026-03-10 22:32:40,030 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-10 22:32:47,261 [ERROR] discord.app_commands.tree: Ignoring exception in command 'setsuggestionchannel'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\suggestions.py", line 264, in set_suggestion_channel
+    await db.update_guild_setting(interaction.guild.id, "suggestion_channel", channel.id)
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\utils\database.py", line 566, in update_guild_setting
+    await db.execute(
+    ...<2 lines>...
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 223, in execute
+    cursor = await self._execute(self._conn.execute, sql, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+sqlite3.OperationalError: no such column: suggestion_channel
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'setsuggestionchannel' raised an exception: OperationalError: no such column: suggestion_channel
+2026-03-10 22:32:47,261 [ERROR] discord.app_commands.tree: Ignoring exception in command 'setsuggestionchannel'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\suggestions.py", line 264, in set_suggestion_channel
+    await db.update_guild_setting(interaction.guild.id, "suggestion_channel", channel.id)
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\utils\database.py", line 566, in update_guild_setting
+    await db.execute(
+    ...<2 lines>...
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 223, in execute
+    cursor = await self._execute(self._conn.execute, sql, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+sqlite3.OperationalError: no such column: suggestion_channel
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'setsuggestionchannel' raised an exception: OperationalError: no such column: suggestion_channel
+2026-03-10 22:32:58,628 [ERROR] discord.app_commands.tree: Ignoring exception in command 'lock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 261, in lock
+    await interaction.response.send_message(embed=success_embed("🔒 Canal blocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'lock' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 22:33:13,909 [ERROR] discord.app_commands.tree: Ignoring exception in command 'unlock'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\moderation.py", line 269, in unlock
+    await interaction.response.send_message(embed=success_embed("🔓 Canal deblocat."))
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'unlock' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 22:33:33,884 [ERROR] discord.app_commands.tree: Ignoring exception in command 'setsuggestionchannel'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\suggestions.py", line 264, in set_suggestion_channel
+    await db.update_guild_setting(interaction.guild.id, "suggestion_channel", channel.id)
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\utils\database.py", line 566, in update_guild_setting
+    await db.execute(
+    ...<2 lines>...
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 223, in execute
+    cursor = await self._execute(self._conn.execute, sql, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+sqlite3.OperationalError: no such column: suggestion_channel
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'setsuggestionchannel' raised an exception: OperationalError: no such column: suggestion_channel
+2026-03-10 22:33:33,887 [ERROR] discord.app_commands.tree: Ignoring exception in command 'setsuggestionchannel'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\suggestions.py", line 264, in set_suggestion_channel
+    await db.update_guild_setting(interaction.guild.id, "suggestion_channel", channel.id)
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\utils\database.py", line 566, in update_guild_setting
+    await db.execute(
+    ...<2 lines>...
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 223, in execute
+    cursor = await self._execute(self._conn.execute, sql, parameters)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 160, in _execute
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiosqlite\core.py", line 63, in _connection_worker_thread
+    result = function()
+sqlite3.OperationalError: no such column: suggestion_channel
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'setsuggestionchannel' raised an exception: OperationalError: no such column: suggestion_channel
+2026-03-10 22:34:22,542 [INFO] discord.client: logging in using static token
+2026-03-10 22:34:23,118 [INFO] GDP-Bot: Initializing database...
+2026-03-10 22:34:23,175 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 22:34:23,178 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 22:34:23,179 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 22:34:23,182 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 22:34:23,184 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 22:34:23,186 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 22:34:23,189 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 22:34:23,191 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 22:34:23,193 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 22:34:23,195 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 22:34:23,197 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 22:34:23,324 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 22:34:23,326 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 22:34:23,328 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 22:34:23,330 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 22:34:23,332 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 22:34:23,334 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 22:34:23,336 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 22:34:23,338 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 22:34:23,340 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 22:34:23,340 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 22:34:23,735 [INFO] GDP-Bot: Synced 99 slash commands to guild 1352620182379565076
+2026-03-10 22:34:24,511 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 5010b307e8191862cf0e4f5facb20bfa).
+2026-03-10 22:34:26,557 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-10 22:35:32,770 [INFO] discord.client: logging in using static token
+2026-03-10 22:35:33,913 [INFO] GDP-Bot: Initializing database...
+2026-03-10 22:35:33,929 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 22:35:33,930 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 22:35:33,932 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 22:35:33,934 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 22:35:33,936 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 22:35:33,938 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 22:35:33,940 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 22:35:33,942 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 22:35:33,945 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 22:35:33,947 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 22:35:33,949 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 22:35:34,084 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 22:35:34,087 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 22:35:34,089 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 22:35:34,091 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 22:35:34,093 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 22:35:34,095 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 22:35:34,096 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 22:35:34,098 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 22:35:34,100 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 22:35:34,100 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 22:35:35,003 [INFO] GDP-Bot: Synced 99 slash commands to guild 1352620182379565076
+2026-03-10 22:35:36,624 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 4c33a832ff277402aec87337a4354ec1).
+2026-03-10 22:35:38,634 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-10 22:37:07,619 [INFO] discord.voice_state: Connecting to voice...
+2026-03-10 22:37:07,619 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 1)
+2026-03-10 22:37:07,978 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-128c2228.discord.media:443
+2026-03-10 22:37:08,163 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 22:37:08,190 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 22:37:09,204 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 2)
+2026-03-10 22:37:09,566 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-128c2228.discord.media:443
+2026-03-10 22:37:09,704 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 22:37:09,705 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 22:37:12,706 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 3)
+2026-03-10 22:37:13,035 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-128c2228.discord.media:443
+2026-03-10 22:37:13,175 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 22:37:13,175 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 22:37:18,185 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 4)
+2026-03-10 22:37:18,527 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-128c2228.discord.media:443
+2026-03-10 22:37:18,683 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 22:37:18,684 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 22:37:25,688 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 5)
+2026-03-10 22:37:26,030 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-128c2228.discord.media:443
+2026-03-10 22:37:26,166 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 9.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 22:37:26,167 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 22:37:35,170 [INFO] discord.voice_state: Voice connection complete.
+2026-03-10 22:37:35,171 [INFO] discord.voice_state: Disconnecting from voice normally, close code 1000.
+2026-03-10 22:37:35,171 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 22:38:09,396 [INFO] discord.voice_state: Connecting to voice...
+2026-03-10 22:38:09,396 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 1)
+2026-03-10 22:38:09,756 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp02-27d26705.discord.media:2087
+2026-03-10 22:38:09,910 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 22:38:09,911 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452786937973964890 (Guild ID 1352620182379565076)
+2026-03-10 22:38:10,913 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 2)
+2026-03-10 22:38:11,268 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp02-27d26705.discord.media:2087
+2026-03-10 22:38:11,425 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 22:38:11,426 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452786937973964890 (Guild ID 1352620182379565076)
+2026-03-10 22:38:14,434 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 3)
+2026-03-10 22:38:14,772 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp02-27d26705.discord.media:2087
+2026-03-10 22:38:14,918 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 22:38:14,919 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452786937973964890 (Guild ID 1352620182379565076)
+2026-03-10 22:38:19,934 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 4)
+2026-03-10 22:38:20,276 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp02-27d26705.discord.media:2087
+2026-03-10 22:38:20,510 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 22:38:20,511 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452786937973964890 (Guild ID 1352620182379565076)
+2026-03-10 22:38:27,520 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 5)
+2026-03-10 22:38:27,887 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-c5d5816a.discord.media:2096
+2026-03-10 22:38:28,080 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 9.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 22:38:28,083 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452786937973964890 (Guild ID 1352620182379565076)
+2026-03-10 22:38:37,087 [INFO] discord.voice_state: Voice connection complete.
+2026-03-10 22:38:37,088 [INFO] discord.voice_state: Disconnecting from voice normally, close code 1000.
+2026-03-10 22:38:37,088 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452786937973964890 (Guild ID 1352620182379565076)
+2026-03-10 22:38:38,976 [ERROR] discord.app_commands.tree: Ignoring exception in command 'play'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\music.py", line 171, in play
+    source = discord.FFmpegPCMAudio(song.url, **FFMPEG_OPTIONS)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\player.py", line 346, in __init__
+    super().__init__(source, executable=executable, args=args, **subprocess_kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\player.py", line 183, in __init__
+    self._process = self._spawn_process(args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\player.py", line 209, in _spawn_process
+    raise ClientException(executable + ' was not found.') from None
+discord.errors.ClientException: ffmpeg was not found.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'play' raised an exception: ClientException: ffmpeg was not found.
+2026-03-10 22:40:30,865 [ERROR] discord.app_commands.tree: Ignoring exception in command 'play'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\music.py", line 171, in play
+    source = discord.FFmpegPCMAudio(song.url, **FFMPEG_OPTIONS)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\player.py", line 346, in __init__
+    super().__init__(source, executable=executable, args=args, **subprocess_kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\player.py", line 183, in __init__
+    self._process = self._spawn_process(args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\player.py", line 209, in _spawn_process
+    raise ClientException(executable + ' was not found.') from None
+discord.errors.ClientException: ffmpeg was not found.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'play' raised an exception: ClientException: ffmpeg was not found.
+2026-03-10 23:00:16,174 [INFO] discord.gateway: Shard ID None has successfully RESUMED session 4c33a832ff277402aec87337a4354ec1.
+2026-03-10 23:04:56,991 [INFO] discord.client: logging in using static token
+2026-03-10 23:04:57,681 [INFO] GDP-Bot: Initializing database...
+2026-03-10 23:04:57,701 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-10 23:04:57,704 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-10 23:04:57,711 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-10 23:04:57,714 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-10 23:04:57,716 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-10 23:04:57,734 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-10 23:04:57,736 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-10 23:04:57,738 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-10 23:04:57,741 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-10 23:04:57,744 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-10 23:04:57,748 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-10 23:04:58,015 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-10 23:04:58,018 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-10 23:04:58,020 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-10 23:04:58,022 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-10 23:04:58,024 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-10 23:04:58,026 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-10 23:04:58,028 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-10 23:04:58,030 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-10 23:04:58,032 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-10 23:04:58,033 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-10 23:04:58,734 [INFO] GDP-Bot: Synced 99 slash commands to guild 1352620182379565076
+2026-03-10 23:04:59,454 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 985d1bd68f4704db88599eef1a218863).
+2026-03-10 23:05:02,079 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-10 23:05:25,652 [INFO] discord.voice_state: Connecting to voice...
+2026-03-10 23:05:25,653 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 1)
+2026-03-10 23:05:25,473 [ERROR] discord.app_commands.tree: Ignoring exception in command 'play'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\music.py", line 146, in play
+    await interaction.response.defer()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 858, in defer
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'play' raised an exception: NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 23:05:25,990 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-128c2228.discord.media:443
+2026-03-10 23:05:26,176 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 23:05:26,178 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 23:05:27,179 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 2)
+2026-03-10 23:05:27,520 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-128c2228.discord.media:443
+2026-03-10 23:05:27,663 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 23:05:27,664 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 23:05:30,664 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 3)
+2026-03-10 23:05:30,984 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-128c2228.discord.media:443
+2026-03-10 23:05:31,144 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 23:05:31,145 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 23:05:35,784 [ERROR] discord.ui.view: Ignoring exception in view <SuggestionPanelView timeout=None children=1> for item <Button style=<ButtonStyle.primary: 1> url=None disabled=False label='Trimite o sugestie' emoji=<PartialEmoji animated=False name='💡' id=None> row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\ui\view.py", line 555, in _scheduled_task
+    await item.callback(interaction)
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\suggestions.py", line 227, in suggest_btn
+    await interaction.response.send_modal(SuggestionModal())
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1273, in send_modal
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 224, in request
+    raise NotFound(response, data)
+discord.errors.NotFound: 404 Not Found (error code: 10062): Unknown interaction
+2026-03-10 23:05:36,150 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 4)
+2026-03-10 23:05:36,478 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-128c2228.discord.media:443
+2026-03-10 23:05:36,628 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 23:05:36,629 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 23:05:43,630 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 5)
+2026-03-10 23:05:43,956 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-128c2228.discord.media:443
+2026-03-10 23:05:44,092 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 9.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-10 23:05:44,092 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 23:05:53,094 [INFO] discord.voice_state: Voice connection complete.
+2026-03-10 23:05:53,095 [INFO] discord.voice_state: Disconnecting from voice normally, close code 1000.
+2026-03-10 23:05:53,095 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452785952857526535 (Guild ID 1352620182379565076)
+2026-03-10 23:05:54,961 [ERROR] discord.app_commands.tree: Ignoring exception in command 'play'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\music.py", line 171, in play
+    player.queue.append(song)
+             ~~~~~~~~~~^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\player.py", line 346, in __init__
+    super().__init__(source, executable=executable, args=args, **subprocess_kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\player.py", line 183, in __init__
+    self._process = self._spawn_process(args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\player.py", line 209, in _spawn_process
+    raise ClientException(executable + ' was not found.') from None
+discord.errors.ClientException: ffmpeg was not found.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'play' raised an exception: ClientException: ffmpeg was not found.
+2026-03-10 23:08:10,686 [ERROR] discord.app_commands.tree: Ignoring exception in command 'announce'
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 858, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Desktop\GDP COMMUNITY BOT\cogs\admin.py", line 78, in announce
+    await interaction.response.send_message(
+        embed=success_embed(f"Anunț trimis în {channel.mention}!"), ephemeral=True
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\interactions.py", line 1051, in send_message
+    response = await adapter.create_interaction_response(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 226, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1297, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 884, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 877, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'announce' raised an exception: HTTPException: 400 Bad Request (error code: 40060): Interaction has already been acknowledged.
+2026-03-11 00:04:32,783 [INFO] discord.gateway: Shard ID None has successfully RESUMED session 4c33a832ff277402aec87337a4354ec1.
+2026-03-11 21:12:12,207 [INFO] discord.client: logging in using static token
+2026-03-11 21:12:13,046 [INFO] GDP-Bot: Initializing database...
+2026-03-11 21:12:13,099 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-11 21:12:13,109 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-11 21:12:13,118 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-11 21:12:13,133 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-11 21:12:13,140 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-11 21:12:13,155 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-11 21:12:13,165 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-11 21:12:13,175 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-11 21:12:13,186 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-11 21:12:13,201 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-11 21:12:13,208 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-11 21:12:13,655 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-11 21:12:13,667 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-11 21:12:13,680 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-11 21:12:13,691 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-11 21:12:13,703 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-11 21:12:13,718 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-11 21:12:13,728 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-11 21:12:13,737 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-11 21:12:13,745 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-11 21:12:13,745 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-11 21:12:14,510 [INFO] GDP-Bot: Synced 99 slash commands to guild 1352620182379565076
+2026-03-11 21:12:15,161 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: d79a9f4373ba08c800749be183968fc3).
+2026-03-11 21:12:17,182 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-11 21:22:46,253 [INFO] discord.client: logging in using static token
+2026-03-11 21:22:47,016 [INFO] GDP-Bot: Initializing database...
+2026-03-11 21:22:47,033 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-11 21:22:47,036 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-11 21:22:47,038 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-11 21:22:47,042 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-11 21:22:47,045 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-11 21:22:47,048 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-11 21:22:47,051 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-11 21:22:47,053 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-11 21:22:47,056 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-11 21:22:47,059 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-11 21:22:47,061 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-11 21:22:47,223 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-11 21:22:47,226 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-11 21:22:47,228 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-11 21:22:47,230 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-11 21:22:47,232 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-11 21:22:47,234 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-11 21:22:47,237 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-11 21:22:47,239 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-11 21:22:47,241 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-11 21:22:47,241 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-11 21:22:48,191 [INFO] GDP-Bot: Synced 99 slash commands to guild 1352620182379565076
+2026-03-11 21:22:49,118 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 20ebe29b5d413b4ec189418a1daa40b4).
+2026-03-11 21:22:51,155 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-11 21:25:53,432 [INFO] discord.client: logging in using static token
+2026-03-11 21:25:54,045 [INFO] GDP-Bot: Initializing database...
+2026-03-11 21:25:54,061 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-11 21:25:54,063 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-11 21:25:54,066 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-11 21:25:54,068 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-11 21:25:54,071 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-11 21:25:54,074 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-11 21:25:54,078 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-11 21:25:54,081 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-11 21:25:54,085 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-11 21:25:54,088 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-11 21:25:54,091 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-11 21:25:54,232 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-11 21:25:54,234 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-11 21:25:54,236 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-11 21:25:54,238 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-11 21:25:54,240 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-11 21:25:54,249 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-11 21:25:54,250 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-11 21:25:54,252 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-11 21:25:54,254 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-11 21:25:54,254 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-11 21:25:54,975 [INFO] GDP-Bot: Synced 98 slash commands to guild 1352620182379565076
+2026-03-11 21:25:55,676 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 89d9809fd8dba186d4054d98573502d4).
+2026-03-11 21:25:57,697 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-11 21:29:24,578 [INFO] discord.client: logging in using static token
+2026-03-11 21:29:25,207 [INFO] GDP-Bot: Initializing database...
+2026-03-11 21:29:25,221 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-11 21:29:25,226 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-11 21:29:25,228 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-11 21:29:25,231 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-11 21:29:25,233 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-11 21:29:25,235 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-11 21:29:25,238 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-11 21:29:25,240 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-11 21:29:25,242 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-11 21:29:25,245 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-11 21:29:25,247 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-11 21:29:25,372 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-11 21:29:25,375 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-11 21:29:25,378 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-11 21:29:25,380 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-11 21:29:25,383 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-11 21:29:25,386 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-11 21:29:25,388 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-11 21:29:25,391 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-11 21:29:25,393 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-11 21:29:25,393 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-11 21:29:26,149 [INFO] GDP-Bot: Synced 98 slash commands to guild 1352620182379565076
+2026-03-11 21:29:26,769 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 2573836fdd4d2c93d9ed787252e6ec57).
+2026-03-11 21:29:28,815 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-11 21:30:17,814 [INFO] discord.client: logging in using static token
+2026-03-11 21:30:18,344 [INFO] GDP-Bot: Initializing database...
+2026-03-11 21:30:18,362 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-11 21:30:18,364 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-11 21:30:18,366 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-11 21:30:18,368 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-11 21:30:18,370 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-11 21:30:18,372 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-11 21:30:18,374 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-11 21:30:18,376 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-11 21:30:18,378 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-11 21:30:18,380 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-11 21:30:18,382 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-11 21:30:18,562 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-11 21:30:18,564 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-11 21:30:18,566 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-11 21:30:18,568 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-11 21:30:18,570 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-11 21:30:18,572 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-11 21:30:18,574 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-11 21:30:18,577 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-11 21:30:18,579 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-11 21:30:18,579 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-11 21:30:19,258 [INFO] GDP-Bot: Synced 98 slash commands to guild 1352620182379565076
+2026-03-11 21:30:19,866 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 9506157ecbc9b7f6e3403fad3a71fd37).
+2026-03-11 21:30:21,881 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-11 21:34:58,925 [INFO] discord.client: logging in using static token
+2026-03-11 21:34:59,453 [INFO] GDP-Bot: Initializing database...
+2026-03-11 21:34:59,480 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-11 21:34:59,483 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-11 21:34:59,486 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-11 21:34:59,488 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-11 21:34:59,490 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-11 21:34:59,492 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-11 21:34:59,495 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-11 21:34:59,497 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-11 21:34:59,500 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-11 21:34:59,502 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-11 21:34:59,504 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-11 21:34:59,631 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-11 21:34:59,633 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-11 21:34:59,635 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-11 21:34:59,636 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-11 21:34:59,638 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-11 21:34:59,648 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-11 21:34:59,650 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-11 21:34:59,652 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-11 21:34:59,654 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-11 21:34:59,654 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-11 21:35:00,344 [INFO] GDP-Bot: Synced 98 slash commands to guild 1352620182379565076
+2026-03-11 21:35:00,976 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 07651f42ae8b536e7e0e581cab7bd826).
+2026-03-11 21:35:03,017 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-11 21:50:39,606 [INFO] discord.client: logging in using static token
+2026-03-11 21:50:40,527 [INFO] GDP-Bot: Initializing database...
+2026-03-11 21:50:40,553 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-11 21:50:40,562 [INFO] GDP-Bot: Loaded cogs.economy
+2026-03-11 21:50:40,568 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-11 21:50:40,576 [INFO] GDP-Bot: Loaded cogs.fun
+2026-03-11 21:50:40,582 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-11 21:50:40,595 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-11 21:50:40,602 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-11 21:50:40,608 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-11 21:50:40,615 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-11 21:50:40,626 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-11 21:50:40,633 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-11 21:50:40,810 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-11 21:50:41,045 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-11 21:50:41,054 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-11 21:50:41,062 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-11 21:50:41,079 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-11 21:50:41,097 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-11 21:50:41,104 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-11 21:50:41,109 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-11 21:50:41,115 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-11 21:50:41,115 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-11 21:50:41,963 [INFO] GDP-Bot: Synced 98 slash commands to guild 1352620182379565076
+2026-03-11 21:50:42,578 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 1dedb73a18f4b683b6b0e29c9e46005d).
+2026-03-11 21:50:44,627 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-11 21:50:48,435 [INFO] discord.voice_state: Connecting to voice...
+2026-03-11 21:50:48,436 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 1)
+2026-03-11 21:50:48,774 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-6c996066.discord.media:443
+2026-03-11 21:50:48,934 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 1.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-11 21:50:48,963 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452799056433643590 (Guild ID 1352620182379565076)
+2026-03-11 21:50:49,965 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 2)
+2026-03-11 21:50:50,298 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-6c996066.discord.media:443
+2026-03-11 21:50:50,442 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 3.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-11 21:50:50,444 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452799056433643590 (Guild ID 1352620182379565076)
+2026-03-11 21:50:53,446 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 3)
+2026-03-11 21:50:53,794 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-6c996066.discord.media:443
+2026-03-11 21:50:53,939 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 5.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-11 21:50:53,940 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452799056433643590 (Guild ID 1352620182379565076)
+2026-03-11 21:50:58,944 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 4)
+2026-03-11 21:50:59,308 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-6c996066.discord.media:443
+2026-03-11 21:50:59,452 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 7.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-11 21:50:59,453 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452799056433643590 (Guild ID 1352620182379565076)
+2026-03-11 21:51:06,462 [INFO] discord.voice_state: Starting voice handshake... (connection attempt 5)
+2026-03-11 21:51:06,842 [INFO] discord.voice_state: Voice handshake complete. Endpoint found: c-otp01-c7d22927.discord.media:2096
+2026-03-11 21:51:07,000 [ERROR] discord.voice_state: Failed to connect to voice... Retrying in 9.0s...
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 413, in _inner_connect
+    await self._handshake_websocket()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\voice_state.py", line 586, in _handshake_websocket
+    await self.ws.poll_event()
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 1053, in poll_event
+    raise ConnectionClosed(self.ws, shard_id=None, code=self._close_code)
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 4017
+2026-03-11 21:51:07,007 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452799056433643590 (Guild ID 1352620182379565076)
+2026-03-11 21:51:13,113 [INFO] discord.voice_state: The voice handshake is being terminated for Channel ID 1452799056433643590 (Guild ID 1352620182379565076)
+2026-03-11 21:51:16,015 [INFO] discord.voice_state: Voice connection complete.
+2026-03-11 21:51:43,940 [INFO] discord.client: logging in using static token
+2026-03-11 21:51:44,554 [INFO] GDP-Bot: Initializing database...
+2026-03-11 21:51:44,569 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-11 21:51:44,570 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-11 21:51:44,572 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-11 21:51:44,574 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-11 21:51:44,577 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-11 21:51:44,580 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-11 21:51:44,583 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-11 21:51:44,585 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-11 21:51:44,587 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-11 21:51:44,707 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-11 21:51:44,709 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-11 21:51:44,711 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-11 21:51:44,712 [INFO] GDP-Bot: Loaded cogs.birthday
+2026-03-11 21:51:44,714 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-11 21:51:44,717 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-11 21:51:44,718 [INFO] GDP-Bot: Loaded cogs.reminders
+2026-03-11 21:51:44,720 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-11 21:51:44,722 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-11 21:51:44,723 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-11 21:51:45,363 [INFO] GDP-Bot: Synced 79 slash commands to guild 1352620182379565076
+2026-03-11 21:51:46,016 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 8c282345f5fb65756a9af719a3b5d885).
+2026-03-11 21:51:48,064 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
+2026-03-11 22:01:34,165 [INFO] discord.client: logging in using static token
+2026-03-11 22:01:34,911 [INFO] GDP-Bot: Initializing database...
+2026-03-11 22:01:34,925 [INFO] GDP-Bot: Loaded cogs.moderation
+2026-03-11 22:01:34,928 [INFO] GDP-Bot: Loaded cogs.leveling
+2026-03-11 22:01:34,935 [INFO] GDP-Bot: Loaded cogs.welcome
+2026-03-11 22:01:34,938 [INFO] GDP-Bot: Loaded cogs.tickets
+2026-03-11 22:01:34,940 [INFO] GDP-Bot: Loaded cogs.giveaway
+2026-03-11 22:01:34,942 [INFO] GDP-Bot: Loaded cogs.utility
+2026-03-11 22:01:34,947 [INFO] GDP-Bot: Loaded cogs.admin
+2026-03-11 22:01:34,950 [INFO] GDP-Bot: Loaded cogs.reports
+2026-03-11 22:01:34,954 [INFO] GDP-Bot: Loaded cogs.botcontrol
+2026-03-11 22:01:35,110 [INFO] GDP-Bot: Loaded cogs.music
+2026-03-11 22:01:35,113 [INFO] GDP-Bot: Loaded cogs.automod
+2026-03-11 22:01:35,116 [INFO] GDP-Bot: Loaded cogs.reaction_roles
+2026-03-11 22:01:35,119 [INFO] GDP-Bot: Loaded cogs.suggestions
+2026-03-11 22:01:35,121 [INFO] GDP-Bot: Loaded cogs.event_log
+2026-03-11 22:01:35,125 [INFO] GDP-Bot: Loaded cogs.antiraid
+2026-03-11 22:01:35,130 [INFO] GDP-Bot: Loaded cogs.scheduler
+2026-03-11 22:01:35,133 [INFO] GDP-Bot: Syncing slash commands...
+2026-03-11 22:01:36,635 [INFO] GDP-Bot: Synced 78 slash commands to guild 1352620182379565076
+2026-03-11 22:01:37,821 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 440752f8861719b311b339a24fc8a659).
+2026-03-11 22:01:39,864 [INFO] GDP-Bot: Logged in as GDP DISC SUPPORT#0840 (ID: 1481018005671641088)
