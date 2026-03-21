@@ -1,0 +1,18 @@
+# Secret – NU urca niciodată pe GitHub
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+
+# Local / logs
+data/bot.log
+*.db-journal
+
+# IDE
+.idea/
+.vscode/
