@@ -10,7 +10,10 @@ import time
 import config
 from utils.database import init_db
 
-# ─── Data folder (log + DB) ──────────────────────────────────────────────────
+# ─── Foldere: directorul fișierului DB (persistență) + ./data pentru log ─────
+_db_dir = os.path.dirname(config.DB_PATH)
+if _db_dir:
+    os.makedirs(_db_dir, exist_ok=True)
 os.makedirs("data", exist_ok=True)
 
 # ─── Logging (console mereu; fișier doar dacă merge — evită crash la disc plin) ─
@@ -54,11 +57,12 @@ class GDPBot(commands.Bot):
 
     async def setup_hook(self):
         log.info("Initializing database...")
+        log.info("Baza de date (persistență XP, economie, inventar): %s", config.DB_PATH)
         await init_db()
 
         cogs = [
             "cogs.moderation",
-            # "cogs.economy",   # dezactivat: sistem de coins
+            "cogs.economy",
             "cogs.leveling",
             # "cogs.fun",       # dezactivat: minigame-uri, comenzi de poze etc.
             "cogs.welcome",

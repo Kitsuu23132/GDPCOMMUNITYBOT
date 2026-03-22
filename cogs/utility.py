@@ -6,7 +6,117 @@ import platform
 import time
 
 import config
-from utils.helpers import embed, info_embed
+from utils.helpers import embed, info_embed, success_embed
+
+
+class PollModal(discord.ui.Modal, title="📊 Sondaj"):
+    def __init__(self):
+        super().__init__(timeout=300)
+        self.q = discord.ui.TextInput(
+            label="Întrebare",
+            placeholder="Ce vrei să întrebi comunitatea?",
+            max_length=256,
+            required=True,
+        )
+        self.o1 = discord.ui.TextInput(
+            label="Opțiunea 1",
+            placeholder="Prima variantă",
+            max_length=80,
+            required=True,
+        )
+        self.o2 = discord.ui.TextInput(
+            label="Opțiunea 2",
+            placeholder="A doua variantă",
+            max_length=80,
+            required=True,
+        )
+        self.o3 = discord.ui.TextInput(
+            label="Opțiunea 3 (opțional)",
+            placeholder="Lasă gol dacă nu ai nevoie",
+            max_length=80,
+            required=False,
+        )
+        self.o4 = discord.ui.TextInput(
+            label="Opțiunea 4 (opțional)",
+            placeholder="Lasă gol dacă nu ai nevoie",
+            max_length=80,
+            required=False,
+        )
+        self.add_item(self.q)
+        self.add_item(self.o1)
+        self.add_item(self.o2)
+        self.add_item(self.o3)
+        self.add_item(self.o4)
+
+    async def on_submit(self, interaction: discord.Interaction):
+        opts = [self.o1.value.strip(), self.o2.value.strip()]
+        if self.o3.value.strip():
+            opts.append(self.o3.value.strip())
+        if self.o4.value.strip():
+            opts.append(self.o4.value.strip())
+        emojis = ["1️⃣", "2️⃣", "3️⃣", "4️⃣"]
+        lines = "\n".join(f"{emojis[i]} {opts[i]}" for i in range(len(opts)))
+        e = embed(
+            title=f"📊 {self.q.value}",
+            description=f"{lines}\n\n*Votează cu reacțiile de mai jos.*",
+            color=config.COLOR_PRIMARY,
+            footer=f"Poll de {interaction.user.display_name}",
+        )
+        await interaction.response.send_message(embed=e)
+        msg = await interaction.original_response()
+        for i in range(len(opts)):
+            await msg.add_reaction(emojis[i])
+
+
+class HubPanelView(discord.ui.View):
+    """Butoane rapide pentru comenzi frecvente (fără URL obligatoriu)."""
+
+    def __init__(self):
+        super().__init__(timeout=None)
+
+    @discord.ui.button(label="🎫 Ticket", style=discord.ButtonStyle.primary, custom_id="hub_ticket")
+    async def btn_ticket(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.send_message(
+            embed=embed(
+                title="🎫 Tickete",
+                description="Folosește **/ticket** (admin) pentru panou sau panoul din canalul dedicat.",
+                color=config.COLOR_INFO,
+            ),
+            ephemeral=True,
+        )
+
+    @discord.ui.button(label="💡 Sugestie", style=discord.ButtonStyle.success, custom_id="hub_suggest")
+    async def btn_suggest(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.send_message(
+            embed=embed(
+                title="💡 Sugestii",
+                description="Scrie **/suggest** sau folosește butonul de pe panoul de sugestii.",
+                color=config.COLOR_INFO,
+            ),
+            ephemeral=True,
+        )
+
+    @discord.ui.button(label="🚨 Raport", style=discord.ButtonStyle.danger, custom_id="hub_report")
+    async def btn_report(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.send_message(
+            embed=embed(
+                title="🚨 Raportare",
+                description="Folosește comanda **/report** sau panoul de raportare din server.",
+                color=config.COLOR_WARNING,
+            ),
+            ephemeral=True,
+        )
+
+    @discord.ui.button(label="🎵 Muzică", style=discord.ButtonStyle.secondary, custom_id="hub_music")
+    async def btn_music(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.send_message(
+            embed=embed(
+                title="🎵 Muzică",
+                description="Intră într-un canal vocal și folosește **/play** + link sau numele melodiei.",
+                color=config.COLOR_INFO,
+            ),
+            ephemeral=True,
+        )
 
 
 class Utility(commands.Cog, name="Utilitar"):
@@ -15,6 +125,11 @@ class Utility(commands.Cog, name="Utilitar"):
     def __init__(self, bot):
         self.bot = bot
         self._start_time = time.time()
+        bot.add_view(HubPanelView())
+
+    def _uptime_seconds(self) -> int:
+        t0 = getattr(self.bot, "_start_time", self._start_time)
+        return int(time.time() - t0)
 
     # ─── /help ───────────────────────────────────────────────────────────────
 
@@ -22,19 +137,87 @@ class Utility(commands.Cog, name="Utilitar"):
     async def help_cmd(self, interaction: discord.Interaction):
         e = embed(
             title="📖 GDP Community Bot — Ajutor",
-            description="Folosește `/` pentru a accesa toate comenzile slash.",
+            description="Folosește `/` pentru comenzi. Moneda serverului este **RDN** (economie).",
             color=config.COLOR_PRIMARY,
             thumbnail=self.bot.user.display_avatar.url if self.bot.user else None,
             fields=[
                 ("⚔️ Moderare", "`/ban` `/kick` `/mute` `/warn` `/purge` `/lock` `/slowmode`", False),
-                ("⭐ Nivele", "`/rank` `/leaderboard`", False),
+                ("⭐ Nivele", "`/rank` `/leaderboard` `/setxp`", False),
+                ("💎 Economie (RDN)", "`/daily` `/balance` `/shop` `/buy` `/givecoins` `/trade swap` `/minigame`", False),
                 ("🎫 Tickete", "`/ticket` `/closeticket` `/adduser`", False),
                 ("🎊 Giveaway", "`/giveaway` `/endgiveaway` `/reroll`", False),
-                ("ℹ️ Utilitar", "`/help` `/serverinfo` `/userinfo` `/botinfo` `/ping`", False),
-                ("⚙️ Admin", "`/announce` `/embed` `/setwelcome` `/setlog` `/schedule add`", False),
+                ("🎵 Muzică", "`/play` `/join` `/leave` `/queue` `/skip`", False),
+                ("ℹ️ Utilitar", "`/help` `/status` `/poll` `/ping` `/serverinfo` `/userinfo` `/botinfo` `/snipe`", False),
+                ("⚙️ Admin", "`/announce` `/embed` `/gdpanel` `/modcoins` `/setwelcome` `/setlog` `/schedule`", False),
             ]
         )
         await interaction.response.send_message(embed=e)
+
+    # ─── /status ─────────────────────────────────────────────────────────────
+
+    @app_commands.command(name="status", description="Stare bot: uptime, latență, bază de date")
+    async def status_cmd(self, interaction: discord.Interaction):
+        await interaction.response.defer(ephemeral=True)
+        uptime = self._uptime_seconds()
+        h, rem = divmod(uptime, 3600)
+        m, s = divmod(rem, 60)
+        uptime_str = f"{h}h {m}m {s}s"
+        ws_ms = round(self.bot.latency * 1000)
+
+        db_ok = "❓"
+        try:
+            from utils.database import DB_PATH
+            import aiosqlite
+            async with aiosqlite.connect(DB_PATH) as conn:
+                await conn.execute("SELECT 1")
+            db_ok = "✅ OK"
+        except Exception as ex:
+            db_ok = f"❌ {ex}"
+
+        e = embed(
+            title="🟢 GDP Bot — Status",
+            color=config.COLOR_SUCCESS if ws_ms < 500 else config.COLOR_WARNING,
+            fields=[
+                ("⏱️ Uptime", uptime_str, True),
+                ("🏓 Latență WS", f"{ws_ms} ms", True),
+                ("🗄️ SQLite", db_ok, True),
+                ("🐍 Python", platform.python_version(), True),
+                ("📦 discord.py", discord.__version__, True),
+                ("👥 Servere", str(len(self.bot.guilds)), True),
+            ],
+        )
+        await interaction.followup.send(embed=e, ephemeral=True)
+
+    # ─── /poll ───────────────────────────────────────────────────────────────
+
+    @app_commands.command(name="poll", description="Creează un sondaj cu reacții (formular)")
+    async def poll_cmd(self, interaction: discord.Interaction):
+        await interaction.response.send_modal(PollModal())
+
+    # ─── /gdpanel ────────────────────────────────────────────────────────────
+
+    @app_commands.command(name="gdpanel", description="[Admin] Postează panoul rapid GDP (butoane)")
+    @app_commands.checks.has_permissions(manage_guild=True)
+    async def gdpanel(self, interaction: discord.Interaction):
+        await interaction.response.defer(ephemeral=True)
+        lines = [
+            "**GDP Community — hub rapid**",
+            "",
+            "• Apasă pe butoane pentru indicații.",
+            "• Staff: `/ticket`, `/suggestionpanel`, `/report` pentru panouri.",
+        ]
+        if config.RULES_URL:
+            lines.append(f"• [Regulament]({config.RULES_URL})")
+        if config.INVITE_URL:
+            lines.append(f"• [Invite server]({config.INVITE_URL})")
+        e = embed(
+            title="🏠 GDP Hub",
+            description="\n".join(lines),
+            color=config.COLOR_PRIMARY,
+            thumbnail=interaction.guild.icon.url if interaction.guild.icon else None,
+        )
+        await interaction.channel.send(embed=e, view=HubPanelView())
+        await interaction.followup.send(embed=success_embed("Panoul a fost postat în canal."), ephemeral=True)
 
     # ─── /ping ───────────────────────────────────────────────────────────────
 
@@ -52,7 +235,7 @@ class Utility(commands.Cog, name="Utilitar"):
 
     @app_commands.command(name="botinfo", description="Informații despre bot")
     async def botinfo(self, interaction: discord.Interaction):
-        uptime_secs = int(time.time() - self._start_time)
+        uptime_secs = self._uptime_seconds()
         h, rem = divmod(uptime_secs, 3600)
         m, s = divmod(rem, 60)
         uptime_str = f"{h}h {m}m {s}s"

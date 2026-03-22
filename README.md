@@ -135,6 +135,35 @@ GDP COMMUNITY BOT/
 
 ---
 
+## 💾 Persistența datelor (XP, inventar, economie)
+
+Tot ce ține de membri (**XP / nivel**, **RDN**, **inventar shop**, **avertismente**, **tickete**, **setări server** etc.) este salvat în **SQLite** într-un singur fișier pe disc.
+
+- **Pe PC / VPS cu disc normal:** datele **rămân** după ce oprești sau repornești botul (fișierul `data/gdp_bot.db`).
+- **La hosting cu redeploy** (Railway, unele panouri): uneori **nu** se păstrează folderul proiectului — atunci trebuie un **volum persistent**.
+
+### Variabilă de mediu `GDP_DB_PATH` (recomandat pe hosting)
+
+Setează calea **absolută** către un fișier într-un folder care **nu** se șterge la deploy:
+
+```env
+GDP_DB_PATH=/var/persistent/gdp_bot.db
+```
+
+Pe Windows (exemplu):
+
+```env
+GDP_DB_PATH=C:\DateBot\gdp_bot.db
+```
+
+După prima pornire, copiază acolo vechiul `gdp_bot.db` dacă migrezi de pe altă mașină.
+
+### Fișiere SQLite auxiliare
+
+Cu modul **WAL** activat, pot apărea lângă `.db` fișierele `-wal` și `-shm` — sunt normale; **nu le șterge** cât timp botul rulează.
+
+---
+
 ## 🔧 Personalizare
 
 ### Shop Items

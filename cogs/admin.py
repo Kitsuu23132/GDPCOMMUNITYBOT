@@ -233,20 +233,26 @@ class Admin(commands.Cog, name="Admin"):
                 ephemeral=True
             )
 
-    # ─── /givecoins ──────────────────────────────────────────────────────────
+    # ─── /modcoins (admin — nu se suprapune cu /givecoins din economie) ───────
 
-    @app_commands.command(name="givecoins", description="[Admin] Oferă coins unui utilizator")
-    @app_commands.describe(member="Utilizatorul", amount="Suma")
+    @app_commands.command(
+        name="modcoins",
+        description="[Admin] Adaugă sau scade RDN unui membru (fără a fi owner bot)",
+    )
+    @app_commands.describe(member="Utilizatorul", amount="Suma (pozitiv/negativ)")
     @app_commands.checks.has_permissions(administrator=True)
-    async def givecoins(self, interaction: discord.Interaction, member: discord.Member, amount: int):
+    async def modcoins(self, interaction: discord.Interaction, member: discord.Member, amount: int):
         if amount == 0:
             return await interaction.response.send_message(
                 embed=error_embed("Suma nu poate fi 0."), ephemeral=True
             )
         await db.update_balance(member.id, interaction.guild.id, amount)
         action = "adăugate" if amount > 0 else "eliminate"
+        c = getattr(config, "CURRENCY_NAME", "RDN")
         await interaction.response.send_message(
-            embed=success_embed(f"**{abs(amount):,}** coins {action} {'lui' if amount > 0 else 'de la'} {member.mention}.")
+            embed=success_embed(
+                f"**{abs(amount):,}** {c} {action} {'lui' if amount > 0 else 'de la'} {member.mention}."
+            )
         )
 
     # ─── /serversetup ────────────────────────────────────────────────────────

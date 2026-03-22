@@ -1,11 +1,21 @@
 import aiosqlite
 import os
+from datetime import datetime, timezone
 
-DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "gdp_bot.db")
+import config
+
+# Aceeași cale ca în config — un singur fișier pentru toate datele persistente
+DB_PATH = config.DB_PATH
 
 
 async def init_db():
+    _dir = os.path.dirname(DB_PATH)
+    if _dir:
+        os.makedirs(_dir, exist_ok=True)
     async with aiosqlite.connect(DB_PATH) as db:
+        # WAL = scrieri mai sigure la crash/restart; recomandat pentru producție
+        await db.execute("PRAGMA journal_mode=WAL")
+        await db.execute("PRAGMA synchronous=NORMAL")
         # Economy table
         await db.execute("""
             CREATE TABLE IF NOT EXISTS economy (
@@ -15,9 +25,24 @@ async def init_db():
                 bank        INTEGER DEFAULT 0,
                 last_daily  TEXT    DEFAULT NULL,
                 last_work   TEXT    DEFAULT NULL,
+                minigames_day    TEXT DEFAULT NULL,
+                minigames_played INTEGER DEFAULT 0,
                 PRIMARY KEY (user_id, guild_id)
             )
         """)
+        # Migrații pentru DB-uri vechi (fără coloane minigame)
+        try:
+            await db.execute(
+                "ALTER TABLE economy ADD COLUMN minigames_day TEXT DEFAULT NULL"
+            )
+        except aiosqlite.OperationalError:
+            pass
+        try:
+            await db.execute(
+                "ALTER TABLE economy ADD COLUMN minigames_played INTEGER DEFAULT 0"
+            )
+        except aiosqlite.OperationalError:
+            pass
 
         # Leveling table
         await db.execute("""
@@ -318,8 +343,18 @@ async def get_economy(user_id: int, guild_id: int) -> dict:
                 (user_id, guild_id)
             )
             await db.commit()
-            return {"balance": 0, "bank": 0, "last_daily": None, "last_work": None}
-        return dict(row)
+            return {
+                "balance": 0,
+                "bank": 0,
+                "last_daily": None,
+                "last_work": None,
+                "minigames_day": None,
+                "minigames_played": 0,
+            }
+        d = dict(row)
+        if d.get("minigames_played") is None:
+            d["minigames_played"] = 0
+        return d
 
 
 async def update_balance(user_id: int, guild_id: int, amount: int):
@@ -378,6 +413,50 @@ async def get_economy_leaderboard(guild_id: int, limit: int = 10) -> list:
             (guild_id, limit)
         ) as cur:
             return [dict(r) for r in await cur.fetchall()]
+
+
+async def try_register_minigame_play(user_id: int, guild_id: int, daily_limit: int = 5) -> bool:
+    """
+    Incrementează contorul minigame pentru ziua curentă (UTC).
+    Returnează True dacă jocul e permis (sub limită), False dacă s-a atins limita.
+    """
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    async with aiosqlite.connect(DB_PATH) as db:
+        db.row_factory = aiosqlite.Row
+        await db.execute(
+            "INSERT OR IGNORE INTO economy (user_id, guild_id) VALUES (?,?)",
+            (user_id, guild_id),
+        )
+        await db.commit()
+        async with db.execute(
+            "SELECT minigames_day, minigames_played FROM economy WHERE user_id=? AND guild_id=?",
+            (user_id, guild_id),
+        ) as cur:
+            row = await cur.fetchone()
+        day = row["minigames_day"] if row else None
+        played = (row["minigames_played"] or 0) if row else 0
+        if day != today:
+            played = 0
+        if played >= daily_limit:
+            return False
+        new_played = played + 1
+        await db.execute(
+            "UPDATE economy SET minigames_day=?, minigames_played=? WHERE user_id=? AND guild_id=?",
+            (today, new_played, user_id, guild_id),
+        )
+        await db.commit()
+        return True
+
+
+async def get_minigames_remaining(user_id: int, guild_id: int, daily_limit: int = 5) -> int:
+    """Câte minigame mai poate juca utilizatorul astăzi (UTC)."""
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    data = await get_economy(user_id, guild_id)
+    day = data.get("minigames_day")
+    played = data.get("minigames_played") or 0
+    if day != today:
+        played = 0
+    return max(0, daily_limit - played)
 
 
 # ─── Leveling helpers ────────────────────────────────────────────────────────
@@ -598,6 +677,32 @@ async def add_to_inventory(user_id: int, guild_id: int, item_key: str, quantity:
             (user_id, guild_id, item_key, quantity, quantity)
         )
         await db.commit()
+
+
+async def remove_from_inventory(user_id: int, guild_id: int, item_key: str, quantity: int = 1) -> bool:
+    """Scade cantitatea; șterge rândul dacă ajunge la 0. Returnează True dacă s-a putut."""
+    async with aiosqlite.connect(DB_PATH) as db:
+        db.row_factory = aiosqlite.Row
+        async with db.execute(
+            "SELECT quantity FROM inventory WHERE user_id=? AND guild_id=? AND item_key=?",
+            (user_id, guild_id, item_key),
+        ) as cur:
+            row = await cur.fetchone()
+        if not row or row["quantity"] < quantity:
+            return False
+        new_q = row["quantity"] - quantity
+        if new_q <= 0:
+            await db.execute(
+                "DELETE FROM inventory WHERE user_id=? AND guild_id=? AND item_key=?",
+                (user_id, guild_id, item_key),
+            )
+        else:
+            await db.execute(
+                "UPDATE inventory SET quantity=? WHERE user_id=? AND guild_id=? AND item_key=?",
+                (new_q, user_id, guild_id, item_key),
+            )
+        await db.commit()
+        return True
 
 
 async def get_inventory(user_id: int, guild_id: int) -> list:
