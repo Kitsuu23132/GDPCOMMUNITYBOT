@@ -9,6 +9,224 @@ from utils import database as db
 from utils.helpers import success_embed, error_embed, embed
 
 
+def _casino_draw_card() -> int:
+    r = random.randint(1, 13)
+    if r > 10:
+        return 10
+    if r == 1:
+        return 11
+    return r
+
+
+def _casino_hand_value(cards: list[int]) -> int:
+    total = sum(cards)
+    aces = sum(1 for c in cards if c == 11)
+    while total > 21 and aces > 0:
+        total -= 10
+        aces -= 1
+    return total
+
+
+def _fmt_cards(cards: list[int], hidden_second: bool = False) -> str:
+    if hidden_second and len(cards) >= 2:
+        return f"{cards[0]} + ?"
+    return " · ".join(str(c) for c in cards)
+
+
+class _BlackjackView(discord.ui.View):
+    def __init__(self, user_id: int, guild_id: int, bet: int, player: list, dealer: list):
+        super().__init__(timeout=120)
+        self.user_id = user_id
+        self.guild_id = guild_id
+        self.bet = bet
+        self.player = list(player)
+        self.dealer = list(dealer)
+        self._done = False
+
+    async def interaction_check(self, interaction: discord.Interaction) -> bool:
+        if interaction.user.id != self.user_id:
+            await interaction.response.send_message(
+                embed=error_embed("Nu e rândul tău la acest blackjack."), ephemeral=True
+            )
+            return False
+        return True
+
+    @discord.ui.button(label="Carte", style=discord.ButtonStyle.primary, row=0)
+    async def hit_btn(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if self._done:
+            return await interaction.response.defer()
+        self.player.append(_casino_draw_card())
+        pv = _casino_hand_value(self.player)
+        if pv > 21:
+            self._done = True
+            for c in self.children:
+                c.disabled = True
+            curname = _rdn()
+            bal = (await db.get_economy(self.user_id, self.guild_id))["balance"]
+            await interaction.response.edit_message(
+                embed=embed(
+                    title="💥 Bust",
+                    description=(
+                        f"Mâna ta: **{_fmt_cards(self.player)}** = **{pv}**\n"
+                        f"Ai pierdut miza de **{self.bet:,}** {curname}.\n"
+                        f"💵 Balanță: **{bal:,}** {curname}"
+                    ),
+                    color=config.COLOR_ERROR,
+                ),
+                view=self,
+            )
+            return
+        await interaction.response.edit_message(
+            embed=embed(
+                title="🃏 Blackjack",
+                description=(
+                    f"**Tu:** {_fmt_cards(self.player)} → **{_casino_hand_value(self.player)}**\n"
+                    f"**Dealer:** {_fmt_cards(self.dealer, hidden_second=True)} (vizibil **{self.dealer[0]}**)\n"
+                    f"Miza: **{self.bet:,}** {_rdn()}"
+                ),
+                color=config.COLOR_ECONOMY,
+            ),
+            view=self,
+        )
+
+    @discord.ui.button(label="Stop", style=discord.ButtonStyle.secondary, row=0)
+    async def stand_btn(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if self._done:
+            return await interaction.response.defer()
+        self._done = True
+        for c in self.children:
+            c.disabled = True
+        dealer = list(self.dealer)
+        while _casino_hand_value(dealer) < 17:
+            dealer.append(_casino_draw_card())
+        pv = _casino_hand_value(self.player)
+        dv = _casino_hand_value(dealer)
+        pay = 0
+        if dv > 21 or pv > dv:
+            pay = 2 * self.bet
+            title, color = "✅ Câștig", config.COLOR_SUCCESS
+            extra = f"Ai **{pv}**, dealer **{dv}**. Primești **{pay:,}** {_rdn()}."
+        elif pv == dv:
+            pay = self.bet
+            title, color = "↔️ Remiză", config.COLOR_WARNING
+            extra = f"**{pv}** egal. Ți se întoarce miza."
+        else:
+            title, color = "❌ Pierdere", config.COLOR_ERROR
+            extra = f"Ai **{pv}**, dealer **{dv}**. Ai pierdut miza."
+        if pay:
+            await db.update_balance(self.user_id, self.guild_id, pay)
+        bal = (await db.get_economy(self.user_id, self.guild_id))["balance"]
+        await interaction.response.edit_message(
+            embed=embed(
+                title=title,
+                description=(
+                    f"**Tu:** {_fmt_cards(self.player)} → **{pv}**\n"
+                    f"**Dealer:** {_fmt_cards(dealer)} → **{dv}**\n"
+                    f"{extra}\n💵 Balanță: **{bal:,}** {_rdn()}"
+                ),
+                color=color,
+            ),
+            view=self,
+        )
+
+
+class _PvpDuelView(discord.ui.View):
+    def __init__(self, bot: commands.Bot, challenge_id: int):
+        super().__init__(timeout=float(config.PVP_BET_EXPIRE_MINUTES * 60))
+        self.bot = bot
+        self.challenge_id = challenge_id
+
+    @discord.ui.button(label="Acceptă pariu", style=discord.ButtonStyle.success, row=0)
+    async def accept(self, interaction: discord.Interaction, button: discord.ui.Button):
+        row = await db.get_pvp_challenge(self.challenge_id)
+        if not row:
+            for c in self.children:
+                c.disabled = True
+            await interaction.response.edit_message(content="Provocare invalidă.", embed=None, view=self)
+            return
+        exp = datetime.fromisoformat(row["expires_at"])
+        if datetime.now(timezone.utc) > exp:
+            await db.delete_pvp_challenge(self.challenge_id)
+            for c in self.children:
+                c.disabled = True
+            await interaction.response.edit_message(content="⏱️ Provocarea a expirat.", embed=None, view=self)
+            return
+        if interaction.user.id != row["opponent_id"]:
+            return await interaction.response.send_message(
+                embed=error_embed("Doar persoana provocată poate accepta."), ephemeral=True
+            )
+        g = row["guild_id"]
+        amt = row["amount"]
+        cid, oid = row["challenger_id"], row["opponent_id"]
+        checo = await db.get_economy(cid, g)
+        opco = await db.get_economy(oid, g)
+        c = _rdn()
+        if checo["balance"] < amt or opco["balance"] < amt:
+            await db.delete_pvp_challenge(self.challenge_id)
+            for b in self.children:
+                b.disabled = True
+            return await interaction.response.edit_message(
+                embed=error_embed("Unul dintre voi nu mai are destui bani — pariu anulat."),
+                view=self,
+            )
+        await db.update_balance(cid, g, -amt)
+        await db.update_balance(oid, g, -amt)
+        flip = random.choice([cid, oid])
+        await db.update_balance(flip, g, 2 * amt)
+        await db.delete_pvp_challenge(self.challenge_id)
+        for b in self.children:
+            b.disabled = True
+        winner = interaction.guild.get_member(flip)
+        wname = winner.mention if winner else f"<@{flip}>"
+        await interaction.response.edit_message(
+            embed=embed(
+                title="🎲 Pariu 1v1",
+                description=(
+                    f"{'🪙' * 3} **{wname}** câștigă **{2 * amt:,}** {c} "
+                    f"(amândoi au mizat **{amt:,}** {c})."
+                ),
+                color=config.COLOR_SUCCESS if flip == interaction.user.id else config.COLOR_FUN,
+            ),
+            view=self,
+        )
+
+    @discord.ui.button(label="Refuză", style=discord.ButtonStyle.danger, row=0)
+    async def refuse(self, interaction: discord.Interaction, button: discord.ui.Button):
+        row = await db.get_pvp_challenge(self.challenge_id)
+        if not row:
+            return await interaction.response.send_message(
+                embed=error_embed("Provocarea nu mai există."), ephemeral=True
+            )
+        uid = interaction.user.id
+        if uid not in (row["challenger_id"], row["opponent_id"]):
+            return await interaction.response.send_message(
+                embed=error_embed("Nu ești parte din acest pariu."), ephemeral=True
+            )
+        await db.delete_pvp_challenge(self.challenge_id)
+        for b in self.children:
+            b.disabled = True
+        await interaction.response.edit_message(
+            content=f"❌ Pariu refuzat de {interaction.user.mention}.",
+            embed=None,
+            view=self,
+        )
+
+    async def on_timeout(self):
+        row = await db.get_pvp_challenge(self.challenge_id)
+        if row:
+            await db.delete_pvp_challenge(self.challenge_id)
+        if not row or not row.get("message_id"):
+            return
+        channel = self.bot.get_channel(row["channel_id"])
+        if not channel:
+            return
+        try:
+            msg = await channel.fetch_message(row["message_id"])
+            await msg.edit(content="⏱️ Provocarea a expirat.", embed=None, view=None)
+        except (discord.NotFound, discord.Forbidden, discord.HTTPException):
+            pass
+
+
 def _rdn() -> str:
     return getattr(config, "CURRENCY_NAME", "RDN")
 
@@ -100,6 +318,59 @@ class Economy(commands.Cog, name="Economie"):
         )
         e.set_thumbnail(url=target.display_avatar.url)
         await interaction.response.send_message(embed=e)
+
+    @app_commands.command(
+        name="deposit",
+        description="Mută RDN din cash în bancă — banii din bancă nu pot fi furăți la /rob",
+    )
+    @app_commands.describe(amount="Suma (cash → bancă)")
+    async def deposit_cmd(self, interaction: discord.Interaction, amount: int):
+        if amount <= 0:
+            return await interaction.response.send_message(
+                embed=error_embed("Folosește o sumă pozitivă."), ephemeral=True
+            )
+        ok = await db.bank_deposit(interaction.user.id, interaction.guild.id, amount)
+        c = _rdn()
+        if not ok:
+            data = await db.get_economy(interaction.user.id, interaction.guild.id)
+            return await interaction.response.send_message(
+                embed=error_embed(
+                    f"Nu ai destui bani în cash. Ai **{data['balance']:,}** {c}."
+                ),
+                ephemeral=True,
+            )
+        data = await db.get_economy(interaction.user.id, interaction.guild.id)
+        await interaction.response.send_message(
+            embed=success_embed(
+                f"Ai depus **{amount:,}** {c} în bancă.\n"
+                f"💵 Cash: **{data['balance']:,}** · 🏦 Bancă: **{data['bank']:,}** {c}"
+            )
+        )
+
+    @app_commands.command(name="withdraw", description="Mută RDN din bancă în cash")
+    @app_commands.describe(amount="Suma (bancă → cash)")
+    async def withdraw_cmd(self, interaction: discord.Interaction, amount: int):
+        if amount <= 0:
+            return await interaction.response.send_message(
+                embed=error_embed("Folosește o sumă pozitivă."), ephemeral=True
+            )
+        ok = await db.bank_withdraw(interaction.user.id, interaction.guild.id, amount)
+        c = _rdn()
+        if not ok:
+            data = await db.get_economy(interaction.user.id, interaction.guild.id)
+            return await interaction.response.send_message(
+                embed=error_embed(
+                    f"Nu ai destul în bancă. Ai **{data['bank']:,}** {c}."
+                ),
+                ephemeral=True,
+            )
+        data = await db.get_economy(interaction.user.id, interaction.guild.id)
+        await interaction.response.send_message(
+            embed=success_embed(
+                f"Ai retras **{amount:,}** {c}.\n"
+                f"💵 Cash: **{data['balance']:,}** · 🏦 Bancă: **{data['bank']:,}** {c}"
+            )
+        )
 
     # ─── /daily ──────────────────────────────────────────────────────────────
 
@@ -307,12 +578,29 @@ class Economy(commands.Cog, name="Economie"):
 
     minigame = app_commands.Group(
         name="minigame",
-        description=f"Jocuri pentru {_rdn()} (max {config.MINIGAMES_PER_DAY}/zi)",
+        description=f"Jocuri cu miză din cash ({config.MINIGAME_BET_MIN}-{config.MINIGAME_BET_MAX} {_rdn()}), max {config.MINIGAMES_PER_DAY}/zi",
     )
 
-    async def _run_minigame(
-        self, interaction: discord.Interaction, title: str, description: str, base_reward: int
-    ):
+    async def _begin_minigame_round(self, interaction: discord.Interaction, bet: int) -> bool:
+        """Înregistrează runda și reține miza. Trimite erori și returnează False dacă nu se poate."""
+        if bet < config.MINIGAME_BET_MIN or bet > config.MINIGAME_BET_MAX:
+            await interaction.response.send_message(
+                embed=error_embed(
+                    f"Miza trebuie între **{config.MINIGAME_BET_MIN:,}** și "
+                    f"**{config.MINIGAME_BET_MAX:,}** {_rdn()}."
+                ),
+                ephemeral=True,
+            )
+            return False
+        data = await db.get_economy(interaction.user.id, interaction.guild.id)
+        if data["balance"] < bet:
+            await interaction.response.send_message(
+                embed=error_embed(
+                    f"Îți trebuie **{bet:,}** {_rdn()} în cash. Ai **{data['balance']:,}**."
+                ),
+                ephemeral=True,
+            )
+            return False
         allowed = await db.try_register_minigame_play(
             interaction.user.id, interaction.guild.id, config.MINIGAMES_PER_DAY
         )
@@ -320,99 +608,315 @@ class Economy(commands.Cog, name="Economie"):
             rem = await db.get_minigames_remaining(
                 interaction.user.id, interaction.guild.id, config.MINIGAMES_PER_DAY
             )
-            return await interaction.response.send_message(
+            await interaction.response.send_message(
                 embed=error_embed(
-                    f"Ai folosit toate **{config.MINIGAMES_PER_DAY}** jocuri azi.\n"
-                    f"Rămase: **{rem}** (reset zilnic UTC)."
+                    f"Limită zilnică (**{config.MINIGAMES_PER_DAY}** jocuri). Rămase: **{rem}**."
                 ),
                 ephemeral=True,
             )
-        await db.update_balance(interaction.user.id, interaction.guild.id, base_reward)
+            return False
+        await db.update_balance(interaction.user.id, interaction.guild.id, -bet)
+        return True
+
+    @minigame.command(name="dice", description="Zar 2d6 — sumă mare dublează miza; mic pierzi tot")
+    @app_commands.describe(bet="Miza din cash")
+    async def mg_dice(self, interaction: discord.Interaction, bet: int):
+        if not await self._begin_minigame_round(interaction, bet):
+            return
+        a, b = random.randint(1, 6), random.randint(1, 6)
+        s = a + b
+        c = _rdn()
+        if s >= 10:
+            payout = bet * 2
+            note = f"🎲 **{a}+{b}={s}** — mare! Primești **{payout:,}** {c} (x2 miză)."
+        elif s >= 7:
+            payout = bet
+            note = f"🎲 **{a}+{b}={s}** — remiză: îți întorci miza (**{payout:,}** {c})."
+        else:
+            payout = 0
+            note = f"🎲 **{a}+{b}={s}** — sumă mică. Ai pierdut miza (**{bet:,}** {c})."
+        if payout:
+            await db.update_balance(interaction.user.id, interaction.guild.id, payout)
         bal = (await db.get_economy(interaction.user.id, interaction.guild.id))["balance"]
         left = await db.get_minigames_remaining(
             interaction.user.id, interaction.guild.id, config.MINIGAMES_PER_DAY
         )
-        c = _rdn()
         await interaction.response.send_message(
             embed=embed(
-                title=title,
-                description=(
-                    f"{description}\n\n"
-                    f"💰 **+{base_reward:,}** {c}\n"
-                    f"💵 Balanță: **{bal:,}** {c}\n"
-                    f"🎮 Mai ai **{left}** minigame-uri azi."
-                ),
-                color=config.COLOR_ECONOMY,
+                title="🎲 Dice",
+                description=f"{note}\n💵 Balanță: **{bal:,}** {c}\n🎮 Minigame rămase azi: **{left}**",
+                color=config.COLOR_ECONOMY if payout >= bet else config.COLOR_ERROR,
             )
         )
 
-    @minigame.command(name="dice", description="Dă cu zarul — câștig aleator de RDN")
-    async def mg_dice(self, interaction: discord.Interaction):
-        a, b = random.randint(1, 6), random.randint(1, 6)
-        s = a + b
-        mult = 1.3 if s >= 9 else 1.0
-        base = random.randint(config.MINIGAME_REWARD_MIN, config.MINIGAME_REWARD_MAX)
-        reward = int(base * mult)
-        desc = f"🎲 **{a}** + **{b}** = **{s}**"
-        await self._run_minigame(interaction, "🎲 Dice", desc, reward)
-
-    @minigame.command(name="guess", description="Ghicește numărul 1–10")
-    @app_commands.describe(numar="Numărul tău (1-10)")
-    async def mg_guess(self, interaction: discord.Interaction, numar: int):
+    @minigame.command(name="guess", description="Ghicește 1–10 — exact triplează miza; altfel pierzi")
+    @app_commands.describe(numar="Numărul tău (1-10)", bet="Miza din cash")
+    async def mg_guess(self, interaction: discord.Interaction, numar: int, bet: int):
         if not 1 <= numar <= 10:
             return await interaction.response.send_message(
                 embed=error_embed("Alege un număr între **1** și **10**."), ephemeral=True
             )
+        if not await self._begin_minigame_round(interaction, bet):
+            return
         secret = random.randint(1, 10)
-        base = random.randint(config.MINIGAME_REWARD_MIN, config.MINIGAME_REWARD_MAX)
-        reward = int(base * (2.0 if numar == secret else 0.6))
-        hit = "🎯 Ghicit!" if numar == secret else "❌ Nu a fost numărul."
-        desc = f"{hit}\nNumăr: **{secret}**, tu: **{numar}**."
-        allowed = await db.try_register_minigame_play(
-            interaction.user.id, interaction.guild.id, config.MINIGAMES_PER_DAY
-        )
-        if not allowed:
-            rem = await db.get_minigames_remaining(
-                interaction.user.id, interaction.guild.id, config.MINIGAMES_PER_DAY
-            )
-            return await interaction.response.send_message(
-                embed=error_embed(
-                    f"Limită zilnică atinsă. Rămase: **{rem}**."
-                ),
-                ephemeral=True,
-            )
-        await db.update_balance(interaction.user.id, interaction.guild.id, reward)
+        hit = numar == secret
+        if hit:
+            payout = bet * 3
+            line = f"🎯 Numărul era **{secret}**! Primești **{payout:,}** {_rdn()} (x3 miză)."
+            col = config.COLOR_SUCCESS
+        else:
+            payout = 0
+            line = f"❌ Numărul era **{secret}**, tu **{numar}**. Ai pierdut **{bet:,}** {_rdn()}."
+            col = config.COLOR_ERROR
+        if payout:
+            await db.update_balance(interaction.user.id, interaction.guild.id, payout)
         bal = (await db.get_economy(interaction.user.id, interaction.guild.id))["balance"]
         left = await db.get_minigames_remaining(
             interaction.user.id, interaction.guild.id, config.MINIGAMES_PER_DAY
         )
-        c = _rdn()
         await interaction.response.send_message(
             embed=embed(
                 title="🔢 Guess",
                 description=(
-                    f"{desc}\n\n"
-                    f"💰 **+{reward:,}** {c}\n"
-                    f"💵 Balanță: **{bal:,}** {c}\n"
-                    f"🎮 Mai ai **{left}** minigame-uri azi."
+                    f"{line}\n💵 Balanță: **{bal:,}** {_rdn()}\n🎮 Mai ai **{left}** minigame-uri azi."
                 ),
-                color=config.COLOR_ECONOMY,
+                color=col,
             )
         )
 
-    @minigame.command(name="slots", description="3 role — combinații bonus")
-    async def mg_slots(self, interaction: discord.Interaction):
+    @minigame.command(name="slots", description="3 role — triplu x4 miză, două egale x2, altfel pierzi")
+    @app_commands.describe(bet="Miza din cash")
+    async def mg_slots(self, interaction: discord.Interaction, bet: int):
+        if not await self._begin_minigame_round(interaction, bet):
+            return
         syms = ["🍒", "🍋", "⭐", "💎", "7️⃣"]
         r = [random.choice(syms) for _ in range(3)]
-        base = random.randint(config.MINIGAME_REWARD_MIN, config.MINIGAME_REWARD_MAX)
+        c = _rdn()
         if r[0] == r[1] == r[2]:
-            reward = int(base * 2.5)
-        elif r[0] == r[1] or r[1] == r[2]:
-            reward = int(base * 1.4)
+            payout = bet * 4
+            line = f"{' | '.join(r)}\n💎 TRIPLU! **{payout:,}** {c}."
+            col = config.COLOR_SUCCESS
+        elif r[0] == r[1] or r[1] == r[2] or r[0] == r[2]:
+            payout = bet * 2
+            line = f"{' | '.join(r)}\n✨ Două la fel — **{payout:,}** {c}."
+            col = config.COLOR_ECONOMY
         else:
-            reward = base
-        desc = " | ".join(r)
-        await self._run_minigame(interaction, "🎰 Slots", desc, reward)
+            payout = 0
+            line = f"{' | '.join(r)}\nNicio combinație — ai pierdut **{bet:,}** {c}."
+            col = config.COLOR_ERROR
+        if payout:
+            await db.update_balance(interaction.user.id, interaction.guild.id, payout)
+        bal = (await db.get_economy(interaction.user.id, interaction.guild.id))["balance"]
+        left = await db.get_minigames_remaining(
+            interaction.user.id, interaction.guild.id, config.MINIGAMES_PER_DAY
+        )
+        await interaction.response.send_message(
+            embed=embed(
+                title="🎰 Slots",
+                description=f"{line}\n💵 Balanță: **{bal:,}** {c}\n🎮 Mai ai **{left}** minigame-uri azi.",
+                color=col,
+            )
+        )
+
+    # ─── Grup /casino ────────────────────────────────────────────────────────
+
+    casino = app_commands.Group(
+        name="casino",
+        description="Blackjack și Risk it all — nu folosesc limita /minigame (high stakes)",
+    )
+
+    @casino.command(
+        name="blackjack",
+        description="Blackjack cu butoane Carte/Stop (dealer trage până la 17)",
+    )
+    @app_commands.describe(bet="Miza din cash")
+    async def casino_blackjack(self, interaction: discord.Interaction, bet: int):
+        mx = getattr(config, "CASINO_BLACKJACK_MAX_BET", 5000)
+        if bet < config.MINIGAME_BET_MIN or bet > mx:
+            return await interaction.response.send_message(
+                embed=error_embed(
+                    f"Miza blackjack: **{config.MINIGAME_BET_MIN:,}** – **{mx:,}** {_rdn()}."
+                ),
+                ephemeral=True,
+            )
+        data = await db.get_economy(interaction.user.id, interaction.guild.id)
+        if data["balance"] < bet:
+            return await interaction.response.send_message(
+                embed=error_embed(
+                    f"Îți lipsește miza în cash. Ai **{data['balance']:,}** {_rdn()}."
+                ),
+                ephemeral=True,
+            )
+        await interaction.response.defer()
+        await db.update_balance(interaction.user.id, interaction.guild.id, -bet)
+        player = [_casino_draw_card(), _casino_draw_card()]
+        dealer = [_casino_draw_card(), _casino_draw_card()]
+        pv = _casino_hand_value(player)
+        dv = _casino_hand_value(dealer)
+        c = _rdn()
+        if pv == 21:
+            if dv == 21:
+                await db.update_balance(interaction.user.id, interaction.guild.id, bet)
+                bal = (await db.get_economy(interaction.user.id, interaction.guild.id))["balance"]
+                return await interaction.followup.send(
+                    embed=embed(
+                        title="🃏 Blackjack",
+                        description=(
+                            f"Amândoi **21** — remiză. Ți se întoarce miza.\n"
+                            f"💵 Balanță: **{bal:,}** {c}"
+                        ),
+                        color=config.COLOR_WARNING,
+                    )
+                )
+            pay = int(bet * 2.5)
+            await db.update_balance(interaction.user.id, interaction.guild.id, pay)
+            bal = (await db.get_economy(interaction.user.id, interaction.guild.id))["balance"]
+            return await interaction.followup.send(
+                embed=embed(
+                    title="🃏 Blackjack natural!",
+                    description=(
+                        f"Tu **21**, dealer **{dv}**. Primești **{pay:,}** {c}.\n"
+                        f"💵 Balanță: **{bal:,}** {c}"
+                    ),
+                    color=config.COLOR_SUCCESS,
+                )
+            )
+        view = _BlackjackView(
+            interaction.user.id, interaction.guild.id, bet, player, dealer
+        )
+        await interaction.followup.send(
+            embed=embed(
+                title="🃏 Blackjack",
+                description=(
+                    f"**Tu:** {_fmt_cards(player)} → **{pv}**\n"
+                    f"**Dealer:** {_fmt_cards(dealer, hidden_second=True)} (vizibil **{dealer[0]}**)\n"
+                    f"Miza: **{bet:,}** {c}\n\nApasă **Carte** sau **Stop**."
+                ),
+                color=config.COLOR_ECONOMY,
+            ),
+            view=view,
+        )
+
+    @casino.command(
+        name="riskitall",
+        description="Doar cash: 1% șansă x10; dacă pierzi, pierzi tot cash-ul (banca e sigură)",
+    )
+    async def casino_riskitall(self, interaction: discord.Interaction):
+        data = await db.get_economy(interaction.user.id, interaction.guild.id)
+        bal = data["balance"]
+        if bal <= 0:
+            return await interaction.response.send_message(
+                embed=error_embed(
+                    f"N-ai cash de riscat. Folosește `/withdraw` sau câștigă {_rdn()}."
+                ),
+                ephemeral=True,
+            )
+        now = datetime.now(timezone.utc)
+        hr = getattr(config, "RISKITALL_COOLDOWN_HOURS", 24)
+        if data.get("last_riskitall"):
+            last = datetime.fromisoformat(data["last_riskitall"])
+            if now - last < timedelta(hours=hr):
+                rem = timedelta(hours=hr) - (now - last)
+                h, m = divmod(int(rem.total_seconds()), 3600)
+                mm = m // 60
+                return await interaction.response.send_message(
+                    embed=error_embed(f"Cooldown Risk it all: revino în **{h}h {mm}m**."),
+                    ephemeral=True,
+                )
+        c = _rdn()
+        await db.set_last_riskitall(interaction.user.id, interaction.guild.id, now.isoformat())
+        win = random.random() < 0.01
+        if win:
+            add = bal * 10 - bal
+            await db.update_balance(interaction.user.id, interaction.guild.id, add)
+            nb = (await db.get_economy(interaction.user.id, interaction.guild.id))["balance"]
+            await interaction.response.send_message(
+                embed=embed(
+                    title="🌟 RISK IT ALL — CÂȘTIG",
+                    description=(
+                        f"1% s-a întâmplat! Cash-ul tău (**{bal:,}** {c}) a fost **înmulțit cu 10**.\n"
+                        f"💵 Cash acum: **{nb:,}** {c}\n"
+                        f"🏦 Banca nu a fost atinsă (**{data['bank']:,}** {c})."
+                    ),
+                    color=config.COLOR_SUCCESS,
+                )
+            )
+        else:
+            await db.update_balance(interaction.user.id, interaction.guild.id, -bal)
+            nb = (await db.get_economy(interaction.user.id, interaction.guild.id))["balance"]
+            await interaction.response.send_message(
+                embed=embed(
+                    title="💀 Risk it all — pierdere",
+                    description=(
+                        f"Ai pierdut **tot cash-ul** (**{bal:,}** {c}). Banca ta rămâne **{data['bank']:,}** {c}.\n"
+                        f"💵 Cash acum: **{nb:,}** {c}"
+                    ),
+                    color=config.COLOR_ERROR,
+                )
+            )
+
+    # ─── Grup /bet (pariu 1v1) ───────────────────────────────────────────────
+
+    bet_group = app_commands.Group(name="bet", description="Pariu cu alt membru (amândoi mizează egal)")
+
+    @bet_group.command(name="duel", description="Provocă pe cineva: amândoi pariați, câștigătorul unul primește totul")
+    @app_commands.describe(opponent="Membrul provocat", amount="Miza fiecăruia (din cash)")
+    async def bet_duel(
+        self, interaction: discord.Interaction, opponent: discord.Member, amount: int
+    ):
+        if opponent.bot or opponent.id == interaction.user.id:
+            return await interaction.response.send_message(
+                embed=error_embed("Alege un membru real, nu pe tine însuți."), ephemeral=True
+            )
+        if amount < config.MINIGAME_BET_MIN:
+            return await interaction.response.send_message(
+                embed=error_embed(
+                    f"Miza minimă: **{config.MINIGAME_BET_MIN:,}** {_rdn()}."
+                ),
+                ephemeral=True,
+            )
+        ch = await db.get_economy(interaction.user.id, interaction.guild.id)
+        op = await db.get_economy(opponent.id, interaction.guild.id)
+        c = _rdn()
+        if ch["balance"] < amount:
+            return await interaction.response.send_message(
+                embed=error_embed(f"Nu ai **{amount:,}** {c} în cash."), ephemeral=True
+            )
+        if op["balance"] < amount:
+            return await interaction.response.send_message(
+                embed=error_embed(
+                    f"{opponent.mention} n-are **{amount:,}** {c} în cash."
+                ),
+                ephemeral=True,
+            )
+        now = datetime.now(timezone.utc)
+        exp = (now + timedelta(minutes=config.PVP_BET_EXPIRE_MINUTES)).isoformat()
+        await db.delete_open_pvp_challenges_between(
+            interaction.guild.id, interaction.user.id, opponent.id
+        )
+        cid = await db.create_pvp_challenge(
+            interaction.guild.id,
+            interaction.channel.id,
+            0,
+            interaction.user.id,
+            opponent.id,
+            amount,
+            now.isoformat(),
+            exp,
+        )
+        view = _PvpDuelView(self.bot, cid)
+        e = embed(
+            title="⚔️ Provocare pariu",
+            description=(
+                f"{interaction.user.mention} pariază **{amount:,}** {c} cu {opponent.mention}.\n"
+                f"Amândoi plătesc miza; **un câștigător** ia **{2 * amount:,}** {c}.\n"
+                f"⏱️ Acceptă în **{config.PVP_BET_EXPIRE_MINUTES}** minute."
+            ),
+            color=config.COLOR_FUN,
+        )
+        await interaction.response.send_message(embed=e, view=view)
+        msg = await interaction.original_response()
+        await db.update_pvp_challenge_message_id(cid, msg.id)
 
     # ─── /work ───────────────────────────────────────────────────────────────
 
@@ -451,35 +955,61 @@ class Economy(commands.Cog, name="Economie"):
 
     # ─── /rob ────────────────────────────────────────────────────────────────
 
-    @app_commands.command(name="rob", description="Încearcă să furi RDN (risc!)")
+    @app_commands.command(
+        name="rob",
+        description="Fură doar din CASH (nu din bancă). Ai cooldown între încercări.",
+    )
     @app_commands.describe(member="Ținta")
     async def rob(self, interaction: discord.Interaction, member: discord.Member):
         if member == interaction.user:
             return await interaction.response.send_message(
                 embed=error_embed("Nu te poți jefui singur."), ephemeral=True
             )
-        victim_data = await db.get_economy(member.id, interaction.guild.id)
+        now = datetime.now(timezone.utc)
         robber_data = await db.get_economy(interaction.user.id, interaction.guild.id)
+        if robber_data.get("last_rob"):
+            last = datetime.fromisoformat(robber_data["last_rob"])
+            cd = timedelta(minutes=getattr(config, "ROB_COOLDOWN_MINUTES", 45))
+            if now - last < cd:
+                rem = cd - (now - last)
+                m = max(1, int(rem.total_seconds() // 60))
+                return await interaction.response.send_message(
+                    embed=error_embed(f"Cooldown /rob: revino în **{m}** minute."),
+                    ephemeral=True,
+                )
+        victim_data = await db.get_economy(member.id, interaction.guild.id)
         if victim_data["balance"] < 50:
             return await interaction.response.send_message(
-                embed=error_embed(f"{member.mention} nu are destui {_rdn()}."), ephemeral=True
+                embed=error_embed(
+                    f"{member.mention} are prea puțin cash (min. 50). Banii din **bancă** nu se fură."
+                ),
+                ephemeral=True,
             )
         success = random.random() < 0.40
         c = _rdn()
+        await db.set_last_rob(interaction.user.id, interaction.guild.id, now.isoformat())
         if success:
-            stolen = random.randint(1, min(victim_data["balance"] // 2, 500))
+            cap = min(victim_data["balance"] // 2, 500)
+            stolen = random.randint(1, max(1, cap))
+            stolen = min(stolen, victim_data["balance"])
             await db.transfer_coins(member.id, interaction.guild.id, interaction.user.id, stolen)
             await interaction.response.send_message(
                 embed=embed(
                     title="🦹 Jaf reușit!",
-                    description=f"Ai luat **{stolen:,}** {c} de la {member.mention}!",
+                    description=(
+                        f"Ai luat **{stolen:,}** {c} cash de la {member.mention}!\n"
+                        f"_(Banii din bancă ai lui sunt în siguranță.)_"
+                    ),
                     color=config.COLOR_SUCCESS,
                 )
             )
         else:
             fine = random.randint(50, 200)
             fine = min(fine, robber_data["balance"])
-            await db.transfer_coins(interaction.user.id, interaction.guild.id, member.id, fine)
+            if fine > 0:
+                await db.transfer_coins(
+                    interaction.user.id, interaction.guild.id, member.id, fine
+                )
             await interaction.response.send_message(
                 embed=embed(
                     title="🚔 Prins!",

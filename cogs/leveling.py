@@ -60,19 +60,11 @@ class Leveling(commands.Cog, name="Nivele"):
             if now < boost_end:
                 xp_gain *= 2
 
-        updated = await db.add_xp(user_id, guild_id, xp_gain)
+        updated = await db.add_xp(user_id, guild_id, xp_gain, messages_delta=1)
         await db.update_last_xp_time(user_id, guild_id, now.isoformat())
 
-        new_level = updated["level"]
-        current_xp = updated["xp"]
-
-        # Check level up
-        while current_xp >= config.xp_for_level(new_level + 1):
-            new_level += 1
-
-        if new_level > updated["level"]:
-            await db.set_level(user_id, guild_id, new_level)
-            await self._handle_level_up(message.author, message.guild, new_level)
+        if updated["new_level"] > updated["old_level"]:
+            await self._handle_level_up(message.author, message.guild, updated["new_level"])
 
     async def _handle_level_up(self, member: discord.Member, guild: discord.Guild, new_level: int):
         settings = await db.get_guild_settings(guild.id)
@@ -143,14 +135,9 @@ class Leveling(commands.Cog, name="Nivele"):
                 continue
 
             xp_gain = VOICE_XP_PER_GRANT
-            updated = await db.add_xp(user_id, guild_id, xp_gain)
-            new_level = updated["level"]
-            current_xp = updated["xp"]
-            while current_xp >= config.xp_for_level(new_level + 1):
-                new_level += 1
-            if new_level > updated["level"]:
-                await db.set_level(user_id, guild_id, new_level)
-                await self._handle_level_up(member, guild, new_level)
+            updated = await db.add_xp(user_id, guild_id, xp_gain, messages_delta=0)
+            if updated["new_level"] > updated["old_level"]:
+                await self._handle_level_up(member, guild, updated["new_level"])
 
     @grant_voice_xp.before_loop
     async def before_voice_xp(self):
@@ -219,19 +206,16 @@ class Leveling(commands.Cog, name="Nivele"):
     @app_commands.describe(member="Utilizatorul", xp="Valoarea XP")
     @app_commands.checks.has_permissions(administrator=True)
     async def setxp(self, interaction: discord.Interaction, member: discord.Member, xp: int):
-        from utils.database import DB_PATH
-        async with __import__("aiosqlite").connect(DB_PATH) as conn:
-            await conn.execute(
-                "INSERT OR IGNORE INTO leveling (user_id, guild_id) VALUES (?,?)",
-                (member.id, interaction.guild.id)
+        if xp < 0:
+            return await interaction.response.send_message(
+                embed=error_embed("XP nu poate fi negativ."), ephemeral=True
             )
-            await conn.execute(
-                "UPDATE leveling SET xp=? WHERE user_id=? AND guild_id=?",
-                (xp, member.id, interaction.guild.id)
-            )
-            await conn.commit()
+        await db.set_leveling_xp(member.id, interaction.guild.id, xp)
+        row = await db.get_leveling(member.id, interaction.guild.id)
         await interaction.response.send_message(
-            embed=success_embed(f"XP-ul lui {member.mention} setat la **{xp:,}**.")
+            embed=success_embed(
+                f"XP-ul lui {member.mention} setat la **{xp:,}** (nivel **{row['level']}**)."
+            )
         )
 
 

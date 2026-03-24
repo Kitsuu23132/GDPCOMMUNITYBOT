@@ -43,6 +43,33 @@ async def init_db():
             )
         except aiosqlite.OperationalError:
             pass
+        try:
+            await db.execute(
+                "ALTER TABLE economy ADD COLUMN last_rob TEXT DEFAULT NULL"
+            )
+        except aiosqlite.OperationalError:
+            pass
+        try:
+            await db.execute(
+                "ALTER TABLE economy ADD COLUMN last_riskitall TEXT DEFAULT NULL"
+            )
+        except aiosqlite.OperationalError:
+            pass
+
+        # Provocări pariu 1v1 (persistă peste restart)
+        await db.execute("""
+            CREATE TABLE IF NOT EXISTS pvp_challenges (
+                id              INTEGER PRIMARY KEY AUTOINCREMENT,
+                guild_id        INTEGER NOT NULL,
+                channel_id      INTEGER NOT NULL,
+                message_id      INTEGER NOT NULL,
+                challenger_id   INTEGER NOT NULL,
+                opponent_id     INTEGER NOT NULL,
+                amount          INTEGER NOT NULL,
+                created_at      TEXT    NOT NULL,
+                expires_at      TEXT    NOT NULL
+            )
+        """)
 
         # Leveling table
         await db.execute("""
@@ -401,10 +428,16 @@ async def get_economy(user_id: int, guild_id: int) -> dict:
                 "last_work": None,
                 "minigames_day": None,
                 "minigames_played": 0,
+                "last_rob": None,
+                "last_riskitall": None,
             }
         d = dict(row)
         if d.get("minigames_played") is None:
             d["minigames_played"] = 0
+        if "last_rob" not in d:
+            d["last_rob"] = None
+        if "last_riskitall" not in d:
+            d["last_riskitall"] = None
         return d
 
 
@@ -452,6 +485,148 @@ async def transfer_coins(from_id: int, guild_id: int, to_id: int, amount: int):
         await db.execute(
             "UPDATE economy SET balance = balance + ? WHERE user_id=? AND guild_id=?",
             (amount, to_id, guild_id)
+        )
+        await db.commit()
+
+
+async def bank_deposit(user_id: int, guild_id: int, amount: int) -> bool:
+    """Mută RDN din cash în bancă. Returnează False dacă nu ai destui bani."""
+    if amount <= 0:
+        return False
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "INSERT OR IGNORE INTO economy (user_id, guild_id) VALUES (?,?)",
+            (user_id, guild_id),
+        )
+        cur = await db.execute(
+            "UPDATE economy SET balance = balance - ?, bank = bank + ? "
+            "WHERE user_id=? AND guild_id=? AND balance >= ?",
+            (amount, amount, user_id, guild_id, amount),
+        )
+        await db.commit()
+        return cur.rowcount > 0
+
+
+async def bank_withdraw(user_id: int, guild_id: int, amount: int) -> bool:
+    """Mută RDN din bancă în cash."""
+    if amount <= 0:
+        return False
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "INSERT OR IGNORE INTO economy (user_id, guild_id) VALUES (?,?)",
+            (user_id, guild_id),
+        )
+        cur = await db.execute(
+            "UPDATE economy SET bank = bank - ?, balance = balance + ? "
+            "WHERE user_id=? AND guild_id=? AND bank >= ?",
+            (amount, amount, user_id, guild_id, amount),
+        )
+        await db.commit()
+        return cur.rowcount > 0
+
+
+async def set_last_rob(user_id: int, guild_id: int, timestamp_iso: str):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "INSERT OR IGNORE INTO economy (user_id, guild_id) VALUES (?,?)",
+            (user_id, guild_id),
+        )
+        await db.execute(
+            "UPDATE economy SET last_rob=? WHERE user_id=? AND guild_id=?",
+            (timestamp_iso, user_id, guild_id),
+        )
+        await db.commit()
+
+
+async def set_last_riskitall(user_id: int, guild_id: int, timestamp_iso: str):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "INSERT OR IGNORE INTO economy (user_id, guild_id) VALUES (?,?)",
+            (user_id, guild_id),
+        )
+        await db.execute(
+            "UPDATE economy SET last_riskitall=? WHERE user_id=? AND guild_id=?",
+            (timestamp_iso, user_id, guild_id),
+        )
+        await db.commit()
+
+
+async def delete_open_pvp_challenges_between(
+    guild_id: int, user_a: int, user_b: int
+) -> None:
+    """Evită rânduri duplicate: o nouă provocare între aceiași doi membri înlocuiește cea veche."""
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            """DELETE FROM pvp_challenges WHERE guild_id=?
+               AND ((challenger_id=? AND opponent_id=?) OR (challenger_id=? AND opponent_id=?))""",
+            (guild_id, user_a, user_b, user_b, user_a),
+        )
+        await db.commit()
+
+
+async def create_pvp_challenge(
+    guild_id: int,
+    channel_id: int,
+    message_id: int,
+    challenger_id: int,
+    opponent_id: int,
+    amount: int,
+    created_at: str,
+    expires_at: str,
+) -> int:
+    async with aiosqlite.connect(DB_PATH) as db:
+        cur = await db.execute(
+            "INSERT INTO pvp_challenges "
+            "(guild_id, channel_id, message_id, challenger_id, opponent_id, amount, created_at, expires_at) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (
+                guild_id,
+                channel_id,
+                message_id,
+                challenger_id,
+                opponent_id,
+                amount,
+                created_at,
+                expires_at,
+            ),
+        )
+        await db.commit()
+        return cur.lastrowid
+
+
+async def get_pvp_challenge(challenge_id: int) -> dict | None:
+    async with aiosqlite.connect(DB_PATH) as db:
+        db.row_factory = aiosqlite.Row
+        async with db.execute(
+            "SELECT * FROM pvp_challenges WHERE id=?",
+            (challenge_id,),
+        ) as cur:
+            row = await cur.fetchone()
+        return dict(row) if row else None
+
+
+async def get_pvp_challenge_by_message(message_id: int) -> dict | None:
+    async with aiosqlite.connect(DB_PATH) as db:
+        db.row_factory = aiosqlite.Row
+        async with db.execute(
+            "SELECT * FROM pvp_challenges WHERE message_id=? ORDER BY id DESC LIMIT 1",
+            (message_id,),
+        ) as cur:
+            row = await cur.fetchone()
+        return dict(row) if row else None
+
+
+async def delete_pvp_challenge(challenge_id: int):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute("DELETE FROM pvp_challenges WHERE id=?", (challenge_id,))
+        await db.commit()
+
+
+async def update_pvp_challenge_message_id(challenge_id: int, message_id: int):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "UPDATE pvp_challenges SET message_id=? WHERE id=?",
+            (message_id, challenge_id),
         )
         await db.commit()
 
@@ -530,24 +705,57 @@ async def get_leveling(user_id: int, guild_id: int) -> dict:
         return dict(row)
 
 
-async def add_xp(user_id: int, guild_id: int, xp: int) -> dict:
-    """Add XP and return updated row."""
+async def add_xp(user_id: int, guild_id: int, xp: int, messages_delta: int = 0) -> dict:
+    """Add XP; messages_delta incrementează contorul doar pentru mesaje (nu pentru voice). Actualizează nivelul din XP."""
+    async with aiosqlite.connect(DB_PATH) as db:
+        db.row_factory = aiosqlite.Row
+        await db.execute(
+            "INSERT OR IGNORE INTO leveling (user_id, guild_id) VALUES (?,?)",
+            (user_id, guild_id),
+        )
+        await db.execute(
+            "UPDATE leveling SET xp = xp + ?, messages = messages + ? WHERE user_id=? AND guild_id=?",
+            (xp, messages_delta, user_id, guild_id),
+        )
+        await db.commit()
+        async with db.execute(
+            "SELECT xp, level, messages, last_xp_time, xp_boost_until FROM leveling WHERE user_id=? AND guild_id=?",
+            (user_id, guild_id),
+        ) as cur:
+            row = await cur.fetchone()
+        total_xp = row["xp"]
+        old_level = row["level"]
+        new_level = old_level
+        while total_xp >= config.xp_for_level(new_level + 1):
+            new_level += 1
+        if new_level != old_level:
+            await db.execute(
+                "UPDATE leveling SET level=? WHERE user_id=? AND guild_id=?",
+                (new_level, user_id, guild_id),
+            )
+            await db.commit()
+        out = dict(row)
+        out["level"] = new_level
+        out["old_level"] = old_level
+        out["new_level"] = new_level
+        return out
+
+
+async def set_leveling_xp(user_id: int, guild_id: int, xp: int):
+    """[Admin] Setează XP și recalculează nivelul după formula din config."""
     async with aiosqlite.connect(DB_PATH) as db:
         await db.execute(
             "INSERT OR IGNORE INTO leveling (user_id, guild_id) VALUES (?,?)",
-            (user_id, guild_id)
+            (user_id, guild_id),
         )
+        new_level = 0
+        while xp >= config.xp_for_level(new_level + 1):
+            new_level += 1
         await db.execute(
-            "UPDATE leveling SET xp = xp + ?, messages = messages + 1 WHERE user_id=? AND guild_id=?",
-            (xp, user_id, guild_id)
+            "UPDATE leveling SET xp=?, level=? WHERE user_id=? AND guild_id=?",
+            (xp, new_level, user_id, guild_id),
         )
         await db.commit()
-        db.row_factory = aiosqlite.Row
-        async with db.execute(
-            "SELECT * FROM leveling WHERE user_id=? AND guild_id=?",
-            (user_id, guild_id)
-        ) as cur:
-            return dict(await cur.fetchone())
 
 
 async def set_level(user_id: int, guild_id: int, level: int):

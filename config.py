@@ -7,6 +7,7 @@ load_dotenv()
 # Tot ce e legat de membri este stocat în acest fișier pe disc — supraviețuiește
 # restartului botului. Pe hosting (Railway, Docker etc.) setează GDP_DB_PATH către
 # un volum persistent, altfel la redeploy se pierde folderul proiectului.
+# Turso/libSQL: aceleași tabele pot fi reutilizate cu un client libsql dacă migrezi.
 _PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 _DEFAULT_DB = os.path.join(_PROJECT_ROOT, "data", "gdp_bot.db")
 DB_PATH = os.path.abspath(os.getenv("GDP_DB_PATH", _DEFAULT_DB))
@@ -49,6 +50,16 @@ BOT_OWNER_IDS = [
 MINIGAMES_PER_DAY = int(os.getenv("MINIGAMES_PER_DAY", 5))
 MINIGAME_REWARD_MIN = int(os.getenv("MINIGAME_REWARD_MIN", 5))
 MINIGAME_REWARD_MAX = int(os.getenv("MINIGAME_REWARD_MAX", 45))
+# Minigame-uri cu pariu (poți pierde miza)
+MINIGAME_BET_MIN = int(os.getenv("MINIGAME_BET_MIN", 10))
+MINIGAME_BET_MAX = int(os.getenv("MINIGAME_BET_MAX", 800))
+# Cooldown între încercări /rob (minute), per jefuitor
+ROB_COOLDOWN_MINUTES = int(os.getenv("ROB_COOLDOWN_MINUTES", 45))
+# Casino: pariu max blackjack, cooldown riskitall (ore)
+CASINO_BLACKJACK_MAX_BET = int(os.getenv("CASINO_BLACKJACK_MAX_BET", 5000))
+RISKITALL_COOLDOWN_HOURS = int(os.getenv("RISKITALL_COOLDOWN_HOURS", 24))
+# Provocare pariu 1v1 expiră după (minute)
+PVP_BET_EXPIRE_MINUTES = int(os.getenv("PVP_BET_EXPIRE_MINUTES", 5))
 
 # XP settings
 XP_PER_MESSAGE_MIN = 5
