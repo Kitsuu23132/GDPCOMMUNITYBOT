@@ -13,7 +13,7 @@ class WelcomeMessageModal(discord.ui.Modal):
         super().__init__(title=title, timeout=300)
         self.setting_key = setting_key
         self.message = discord.ui.TextInput(
-            label="Mesaj",
+            label="Mesaj (mai multe rânduri)",
             style=discord.TextStyle.paragraph,
             placeholder=description_hint,
             required=True,
@@ -134,11 +134,12 @@ class Welcome(commands.Cog, name="Welcome"):
         - {user}   → mențiunea utilizatorului
         - {server} → numele serverului
         - {count}  → numărul de membri după join
+        În formular poți folosi Enter pentru rânduri noi.
         """
         modal = WelcomeMessageModal(
             title="Setează mesajul de welcome",
             setting_key="welcome_message",
-            description_hint="Exemplu: Bine ai venit pe {server}, {user}! Ești al {count}-lea membru.",
+            description_hint="Ex: Bine ai venit pe {server}! Enter = rând nou.",
         )
         await interaction.response.send_modal(modal)
 
@@ -154,7 +155,7 @@ class Welcome(commands.Cog, name="Welcome"):
         modal = WelcomeMessageModal(
             title="Setează mesajul de goodbye",
             setting_key="goodbye_message",
-            description_hint="Exemplu: {user} a părăsit {server}. Ne vedem data viitoare!",
+            description_hint="Ex: {user} a părăsit {server}. Poți folosi mai multe rânduri.",
         )
         await interaction.response.send_modal(modal)
 

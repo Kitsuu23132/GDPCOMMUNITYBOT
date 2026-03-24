@@ -23,9 +23,9 @@ class AnnounceModal(discord.ui.Modal, title="📢 Trimite anunț"):
             required=True,
         )
         self.body = discord.ui.TextInput(
-            label="Mesaj",
+            label="Mesaj (mai multe rânduri)",
             style=discord.TextStyle.paragraph,
-            placeholder="Textul anunțului...",
+            placeholder="Textul anunțului. Enter = rând nou; se păstrează în embed.",
             max_length=2000,
             required=True,
         )
@@ -64,9 +64,9 @@ class CustomEmbedModal(discord.ui.Modal, title="📦 Embed personalizat"):
             required=True,
         )
         self.description = discord.ui.TextInput(
-            label="Descriere",
+            label="Descriere (mai multe rânduri)",
             style=discord.TextStyle.paragraph,
-            placeholder="Conținutul principal...",
+            placeholder="Conținutul principal. Enter = rând nou; suportă **markdown** Discord.",
             max_length=4000,
             required=True,
         )
@@ -98,6 +98,64 @@ class CustomEmbedModal(discord.ui.Modal, title="📦 Embed personalizat"):
             )
         await interaction.followup.send(
             embed=success_embed(f"Embed trimis în {self.target_channel.mention}!"), ephemeral=True
+        )
+
+
+class UpdateModal(discord.ui.Modal, title="🚀 Update — anunț"):
+    """Formular pentru anunțuri de actualizare (bot / server)."""
+
+    def __init__(self, channel: discord.TextChannel, ping_everyone: bool):
+        super().__init__(timeout=300)
+        self.target_channel = channel
+        self.ping_everyone = ping_everyone
+        self.version_in = discord.ui.TextInput(
+            label="Versiune (opțional)",
+            placeholder="Ex: v2.1.0 — lasă gol dacă nu aplică",
+            max_length=32,
+            required=False,
+        )
+        self.title_in = discord.ui.TextInput(
+            label="Titlu scurt",
+            placeholder="Ex: Actualizare GDP Bot — îmbunătățiri economie & tips",
+            max_length=256,
+            required=True,
+        )
+        self.body = discord.ui.TextInput(
+            label="Detalii / changelog (mai multe rânduri)",
+            style=discord.TextStyle.paragraph,
+            placeholder="Listează ce e nou: bullet points, fix-uri, comenzi noi… Enter = rând nou.",
+            max_length=3500,
+            required=True,
+        )
+        self.add_item(self.version_in)
+        self.add_item(self.title_in)
+        self.add_item(self.body)
+
+    async def on_submit(self, interaction: discord.Interaction):
+        await interaction.response.defer(ephemeral=True)
+        ver = (self.version_in.value or "").strip()
+        desc_parts = []
+        if ver:
+            desc_parts.append(f"**Versiune:** `{ver}`\n")
+        desc_parts.append(self.body.value)
+        description = "".join(desc_parts)
+        e = embed(
+            title=f"🚀 {self.title_in.value}",
+            description=description,
+            color=config.COLOR_SUCCESS,
+            thumbnail=interaction.guild.icon.url if interaction.guild.icon else None,
+        )
+        e.set_footer(text=f"Update publicat de {interaction.user.display_name}")
+        content = "@everyone" if self.ping_everyone else None
+        try:
+            await self.target_channel.send(content=content, embed=e)
+        except Exception as ex:
+            return await interaction.followup.send(
+                embed=error_embed(f"Nu am putut trimite anunțul: {ex}"), ephemeral=True
+            )
+        await interaction.followup.send(
+            embed=success_embed(f"Anunț de update trimis în {self.target_channel.mention}!"),
+            ephemeral=True,
         )
 
 
@@ -164,6 +222,25 @@ class Admin(commands.Cog, name="Admin"):
     @app_commands.checks.has_permissions(manage_messages=True)
     async def send_embed(self, interaction: discord.Interaction, channel: discord.TextChannel):
         await interaction.response.send_modal(CustomEmbedModal(channel))
+
+    # ─── /update ─────────────────────────────────────────────────────────────
+
+    @app_commands.command(
+        name="update",
+        description="[Admin] Anunță un update (formular — versiune, titlu, changelog)",
+    )
+    @app_commands.describe(
+        channel="Canalul unde se postează anunțul",
+        ping_everyone="Dacă să dea ping @everyone",
+    )
+    @app_commands.checks.has_permissions(administrator=True)
+    async def update_announce(
+        self,
+        interaction: discord.Interaction,
+        channel: discord.TextChannel,
+        ping_everyone: bool = False,
+    ):
+        await interaction.response.send_modal(UpdateModal(channel, ping_everyone))
 
     # ─── /addrole / /removerole ───────────────────────────────────────────────
 

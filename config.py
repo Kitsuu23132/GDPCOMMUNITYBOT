@@ -28,15 +28,15 @@ ADMIN_ROLE_ID = int(os.getenv("ADMIN_ROLE_ID", 0))
 MEMBER_ROLE_ID = int(os.getenv("MEMBER_ROLE_ID", 0))
 
 # Link-uri opționale pentru panoul /gdpanel (lasă gol dacă nu folosești)
-RULES_URL = os.getenv("RULES_URL", "").strip()
-INVITE_URL = os.getenv("INVITE_URL", "").strip()
+RULES_URL = os.getenv("RULES_URL", "https://docs.google.com/document/d/15r3L-sJLkXxeVn9zjJCp4hvC4Uy8LAzlzPqcNLNhO6A/edit?usp=sharing").strip()
+INVITE_URL = os.getenv("INVITE_URL", "https://discord.gg/gdpcommunity").strip()
 
 DAILY_COINS = int(os.getenv("DAILY_COINS", 50))
 WORK_MIN = int(os.getenv("WORK_MIN", 50))
 WORK_MAX = int(os.getenv("WORK_MAX", 200))
 
 # Monedă afișată în economie (RDN)
-CURRENCY_NAME = "RDN"
+CURRENCY_NAME = "PufuCoins"
 
 # Owner(i) bot — ID-uri Discord separate prin virgulă (pentru /gaddcoins). Lasă gol = doar owner-ul aplicației din Developer Portal.
 BOT_OWNER_IDS = [
@@ -134,3 +134,33 @@ SHOP_ITEM_ROLES = {
     "veteran_rank": 1452803129174134806,
     "custom_colors": 1474152163730002196,
 }
+
+# ─── Sfaturi automate (tips) în canal ─────────────────────────────────────────
+# Setări implicite; pe server le poți schimba cu /tips setup, /tips interval etc.
+_TIPS_EN = os.getenv("TIPS_ENABLED", "true").strip().lower()
+TIPS_ENABLED = _TIPS_EN not in ("0", "false", "no", "off")
+TIPS_CHANNEL_ID = int(os.getenv("TIPS_CHANNEL_ID", 0))
+TIPS_INTERVAL_MINUTES = max(15, min(1440, int(os.getenv("TIPS_INTERVAL_MINUTES", 180))))
+
+# ID-uri Discord pentru mențiuni în texte (opțional). Dacă sunt 0, se folosește fallback @username
+TIP_CREDIT_DISCORD_USER_ID = int(os.getenv("TIP_CREDIT_DISCORD_USER_ID", 0))
+TIP_CREDIT_LOGO_USER_ID = int(os.getenv("TIP_CREDIT_LOGO_USER_ID", 0))
+TIP_CREDIT_DISCORD_FALLBACK = os.getenv("TIP_CREDIT_DISCORD_FALLBACK", "chitu_chit").strip()
+TIP_CREDIT_LOGO_FALLBACK = os.getenv("TIP_CREDIT_LOGO_FALLBACK", "andrei_david0968").strip()
+
+# Mesaje random. Placeholders: {suggestion_channel}, {credit_discord}, {credit_logo},
+# {rules}, {invite}, {currency}, {prefix}
+TIPS_MESSAGES = [
+    "Poți face o sugestie pentru orice pe {suggestion_channel} — folosește **/suggest** sau panoul de sugestii.",
+    "Serverul de Discord a fost structurat cu ajutorul comunității — mulțumiri {credit_discord}!",
+    "Logo-ul serverului este realizat de {credit_logo}.",
+    "Câștigi {currency} zilnic cu **/daily** și din minigame-uri: **/minigame**.",
+    "Vezi clasamentul de nivel cu **/leaderboard** și progresul tău cu **/rank**.",
+    "Ai nevoie de ajutor staff? Deschide un ticket din canalul dedicat sau **/report**.",
+    "Intră în lobby-ul temp voice (dacă e setat) ca să îți creeze automat un canal — **/vroom status** (admin).",
+    "Regulile serverului: {rules}.",
+    "Invită prieteni: {invite}.",
+    "Prefix clasic pentru comenzi (unde există): `{prefix}` — comenzile principale sunt slash (**/**).",
+    "Economia folosește **{currency}**; transfer între membri: **/givecoins**.",
+    "Poți programa mesaje din admin: **/schedule add**.",
+]

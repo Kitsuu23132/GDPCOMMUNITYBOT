@@ -17,9 +17,9 @@ class ScheduleAddModal(discord.ui.Modal, title="📅 Mesaj programat"):
         self.time_str = time_str
         self.repeat = repeat
         self.plain = discord.ui.TextInput(
-            label="Mesaj simplu (opțional)",
+            label="Mesaj simplu (opțional, mai multe rânduri)",
             style=discord.TextStyle.paragraph,
-            placeholder="Lasă gol dacă folosești doar embed mai jos",
+            placeholder="Lasă gol dacă folosești doar embed. Enter = rând nou.",
             max_length=2000,
             required=False,
         )
@@ -30,9 +30,9 @@ class ScheduleAddModal(discord.ui.Modal, title="📅 Mesaj programat"):
             required=False,
         )
         self.embed_desc = discord.ui.TextInput(
-            label="Descriere embed (opțional)",
+            label="Descriere embed (opțional, mai multe rânduri)",
             style=discord.TextStyle.paragraph,
-            placeholder="Conținutul embed-ului",
+            placeholder="Conținut embed. Enter = rând nou; **bold** etc. ca în Discord.",
             max_length=4000,
             required=False,
         )

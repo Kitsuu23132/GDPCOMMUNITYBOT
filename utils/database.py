@@ -324,6 +324,57 @@ async def init_db():
             )
         """)
 
+        # Temp voice config
+        await db.execute("""
+            CREATE TABLE IF NOT EXISTS tempvoice_config (
+                guild_id             INTEGER PRIMARY KEY,
+                lobby_channel_id     INTEGER DEFAULT 0,
+                category_id          INTEGER DEFAULT 0,
+                name_template        TEXT    DEFAULT 'Canalul de voice a lui {user}',
+                default_user_limit   INTEGER DEFAULT 0,
+                default_bitrate      INTEGER DEFAULT 64000
+            )
+        """)
+
+        # Temp voice rooms (canale create din lobby)
+        await db.execute("""
+            CREATE TABLE IF NOT EXISTS tempvoice_rooms (
+                guild_id     INTEGER NOT NULL,
+                channel_id   INTEGER PRIMARY KEY,
+                owner_id     INTEGER NOT NULL,
+                created_at   TEXT    NOT NULL
+            )
+        """)
+
+        # Temp voice permission lists
+        await db.execute("""
+            CREATE TABLE IF NOT EXISTS tempvoice_whitelist (
+                guild_id     INTEGER NOT NULL,
+                channel_id   INTEGER NOT NULL,
+                user_id      INTEGER NOT NULL,
+                PRIMARY KEY (guild_id, channel_id, user_id)
+            )
+        """)
+        await db.execute("""
+            CREATE TABLE IF NOT EXISTS tempvoice_blacklist (
+                guild_id     INTEGER NOT NULL,
+                channel_id   INTEGER NOT NULL,
+                user_id      INTEGER NOT NULL,
+                PRIMARY KEY (guild_id, channel_id, user_id)
+            )
+        """)
+
+        # Sfaturi automate (tips) în chat
+        await db.execute("""
+            CREATE TABLE IF NOT EXISTS tips_settings (
+                guild_id         INTEGER PRIMARY KEY,
+                channel_id       INTEGER DEFAULT 0,
+                enabled          INTEGER DEFAULT 0,
+                interval_minutes INTEGER DEFAULT 180,
+                last_sent_at     TEXT    DEFAULT NULL
+            )
+        """)
+
         await db.commit()
 
 
@@ -1150,5 +1201,199 @@ async def update_antiraid_config(guild_id: int, key: str, value):
         )
         await db.execute(
             f"UPDATE antiraid_config SET {key}=? WHERE guild_id=?", (value, guild_id)
+        )
+        await db.commit()
+
+
+# ─── Temp voice helpers ───────────────────────────────────────────────────────
+
+async def get_tempvoice_config(guild_id: int) -> dict:
+    async with aiosqlite.connect(DB_PATH) as db:
+        db.row_factory = aiosqlite.Row
+        async with db.execute(
+            "SELECT * FROM tempvoice_config WHERE guild_id=?", (guild_id,)
+        ) as cur:
+            row = await cur.fetchone()
+        if not row:
+            await db.execute(
+                "INSERT OR IGNORE INTO tempvoice_config (guild_id) VALUES (?)",
+                (guild_id,),
+            )
+            await db.commit()
+            return {
+                "guild_id": guild_id,
+                "lobby_channel_id": 0,
+                "category_id": 0,
+                "name_template": "Canalul de voice a lui {user}",
+                "default_user_limit": 0,
+                "default_bitrate": 64000,
+            }
+        return dict(row)
+
+
+async def update_tempvoice_config(guild_id: int, key: str, value):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "INSERT OR IGNORE INTO tempvoice_config (guild_id) VALUES (?)",
+            (guild_id,),
+        )
+        await db.execute(
+            f"UPDATE tempvoice_config SET {key}=? WHERE guild_id=?",
+            (value, guild_id),
+        )
+        await db.commit()
+
+
+async def upsert_tempvoice_room(guild_id: int, channel_id: int, owner_id: int, created_at: str):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "INSERT INTO tempvoice_rooms (guild_id, channel_id, owner_id, created_at) "
+            "VALUES (?,?,?,?) "
+            "ON CONFLICT(channel_id) DO UPDATE SET owner_id=excluded.owner_id",
+            (guild_id, channel_id, owner_id, created_at),
+        )
+        await db.commit()
+
+
+async def get_tempvoice_room(channel_id: int) -> dict | None:
+    async with aiosqlite.connect(DB_PATH) as db:
+        db.row_factory = aiosqlite.Row
+        async with db.execute(
+            "SELECT * FROM tempvoice_rooms WHERE channel_id=?", (channel_id,)
+        ) as cur:
+            row = await cur.fetchone()
+        return dict(row) if row else None
+
+
+async def get_tempvoice_rooms_for_guild(guild_id: int) -> list:
+    async with aiosqlite.connect(DB_PATH) as db:
+        db.row_factory = aiosqlite.Row
+        async with db.execute(
+            "SELECT * FROM tempvoice_rooms WHERE guild_id=?", (guild_id,)
+        ) as cur:
+            return [dict(r) for r in await cur.fetchall()]
+
+
+async def set_tempvoice_owner(channel_id: int, owner_id: int):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "UPDATE tempvoice_rooms SET owner_id=? WHERE channel_id=?",
+            (owner_id, channel_id),
+        )
+        await db.commit()
+
+
+async def delete_tempvoice_room(channel_id: int):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute("DELETE FROM tempvoice_rooms WHERE channel_id=?", (channel_id,))
+        await db.execute("DELETE FROM tempvoice_whitelist WHERE channel_id=?", (channel_id,))
+        await db.execute("DELETE FROM tempvoice_blacklist WHERE channel_id=?", (channel_id,))
+        await db.commit()
+
+
+async def add_tempvoice_whitelist(guild_id: int, channel_id: int, user_id: int):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "INSERT OR IGNORE INTO tempvoice_whitelist (guild_id, channel_id, user_id) VALUES (?,?,?)",
+            (guild_id, channel_id, user_id),
+        )
+        await db.execute(
+            "DELETE FROM tempvoice_blacklist WHERE guild_id=? AND channel_id=? AND user_id=?",
+            (guild_id, channel_id, user_id),
+        )
+        await db.commit()
+
+
+async def remove_tempvoice_whitelist(guild_id: int, channel_id: int, user_id: int):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "DELETE FROM tempvoice_whitelist WHERE guild_id=? AND channel_id=? AND user_id=?",
+            (guild_id, channel_id, user_id),
+        )
+        await db.commit()
+
+
+async def add_tempvoice_blacklist(guild_id: int, channel_id: int, user_id: int):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "INSERT OR IGNORE INTO tempvoice_blacklist (guild_id, channel_id, user_id) VALUES (?,?,?)",
+            (guild_id, channel_id, user_id),
+        )
+        await db.execute(
+            "DELETE FROM tempvoice_whitelist WHERE guild_id=? AND channel_id=? AND user_id=?",
+            (guild_id, channel_id, user_id),
+        )
+        await db.commit()
+
+
+async def remove_tempvoice_blacklist(guild_id: int, channel_id: int, user_id: int):
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "DELETE FROM tempvoice_blacklist WHERE guild_id=? AND channel_id=? AND user_id=?",
+            (guild_id, channel_id, user_id),
+        )
+        await db.commit()
+
+
+async def get_tempvoice_whitelist(channel_id: int) -> list[int]:
+    async with aiosqlite.connect(DB_PATH) as db:
+        async with db.execute(
+            "SELECT user_id FROM tempvoice_whitelist WHERE channel_id=?", (channel_id,)
+        ) as cur:
+            rows = await cur.fetchall()
+        return [int(r[0]) for r in rows]
+
+
+async def get_tempvoice_blacklist(channel_id: int) -> list[int]:
+    async with aiosqlite.connect(DB_PATH) as db:
+        async with db.execute(
+            "SELECT user_id FROM tempvoice_blacklist WHERE channel_id=?", (channel_id,)
+        ) as cur:
+            rows = await cur.fetchall()
+        return [int(r[0]) for r in rows]
+
+
+# ─── Tips (sfaturi automate) ──────────────────────────────────────────────────
+
+async def get_tips_settings(guild_id: int) -> dict:
+    async with aiosqlite.connect(DB_PATH) as db:
+        db.row_factory = aiosqlite.Row
+        async with db.execute(
+            "SELECT * FROM tips_settings WHERE guild_id=?", (guild_id,)
+        ) as cur:
+            row = await cur.fetchone()
+        if not row:
+            default_ch = int(getattr(config, "TIPS_CHANNEL_ID", 0) or 0)
+            if guild_id != int(getattr(config, "GUILD_ID", 0) or 0):
+                default_ch = 0
+            default_en = 1 if (getattr(config, "TIPS_ENABLED", True) and default_ch) else 0
+            interval = max(15, int(getattr(config, "TIPS_INTERVAL_MINUTES", 180) or 180))
+            await db.execute(
+                "INSERT INTO tips_settings (guild_id, channel_id, enabled, interval_minutes, last_sent_at) "
+                "VALUES (?,?,?,?,NULL)",
+                (guild_id, default_ch, default_en, interval),
+            )
+            await db.commit()
+            return {
+                "guild_id": guild_id,
+                "channel_id": default_ch,
+                "enabled": default_en,
+                "interval_minutes": interval,
+                "last_sent_at": None,
+            }
+        return dict(row)
+
+
+async def update_tips_field(guild_id: int, field: str, value):
+    if field not in ("channel_id", "enabled", "interval_minutes", "last_sent_at"):
+        raise ValueError("Invalid tips field")
+
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute(
+            "INSERT OR IGNORE INTO tips_settings (guild_id) VALUES (?)", (guild_id,)
+        )
+        await db.execute(
+            f"UPDATE tips_settings SET {field}=? WHERE guild_id=?",
+            (value, guild_id),
         )
         await db.commit()

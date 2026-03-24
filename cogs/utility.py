@@ -13,9 +13,10 @@ class PollModal(discord.ui.Modal, title="📊 Sondaj"):
     def __init__(self):
         super().__init__(timeout=300)
         self.q = discord.ui.TextInput(
-            label="Întrebare",
-            placeholder="Ce vrei să întrebi comunitatea?",
-            max_length=256,
+            label="Întrebare (mai multe rânduri)",
+            placeholder="Scrie întrebarea aici. Poți apăsa Enter pentru rânduri noi.",
+            style=discord.TextStyle.paragraph,
+            max_length=1000,
             required=True,
         )
         self.o1 = discord.ui.TextInput(
@@ -147,8 +148,9 @@ class Utility(commands.Cog, name="Utilitar"):
                 ("🎫 Tickete", "`/ticket` `/closeticket` `/adduser`", False),
                 ("🎊 Giveaway", "`/giveaway` `/endgiveaway` `/reroll`", False),
                 ("🎵 Muzică", "`/play` `/join` `/leave` `/queue` `/skip`", False),
+                ("🔊 Temp Voice", "`/vroom setup` `/vroom lock` `/vroom unlock` `/vroom permit` `/vroom deny` `/vroom transfer`", False),
                 ("ℹ️ Utilitar", "`/help` `/status` `/poll` `/ping` `/serverinfo` `/userinfo` `/botinfo` `/snipe`", False),
-                ("⚙️ Admin", "`/announce` `/embed` `/gdpanel` `/modcoins` `/setwelcome` `/setlog` `/schedule`", False),
+                ("⚙️ Admin", "`/announce` `/embed` `/update` `/gdpanel` `/modcoins` `/setwelcome` `/setlog` `/schedule` `/vroom status` `/tips`", False),
             ]
         )
         await interaction.response.send_message(embed=e)

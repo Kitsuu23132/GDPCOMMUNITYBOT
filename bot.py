@@ -73,6 +73,7 @@ class GDPBot(commands.Bot):
             "cogs.reports",
             "cogs.botcontrol",
             "cogs.music",
+            "cogs.tempvoice",
             "cogs.automod",
             "cogs.reaction_roles",
             # "cogs.birthday",   # dezactivat: sistem de zile de naștere
@@ -81,6 +82,7 @@ class GDPBot(commands.Bot):
             # "cogs.reminders",  # dezactivat: remindere personale
             "cogs.antiraid",
             "cogs.scheduler",
+            "cogs.tips",
         ]
         for cog in cogs:
             try:
