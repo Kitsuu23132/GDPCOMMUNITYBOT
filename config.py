@@ -56,7 +56,7 @@ MINIGAME_BET_MAX = int(os.getenv("MINIGAME_BET_MAX", 800))
 # Cooldown între încercări /rob (minute), per jefuitor
 ROB_COOLDOWN_MINUTES = int(os.getenv("ROB_COOLDOWN_MINUTES", 45))
 # Casino: pariu max blackjack, cooldown riskitall (ore)
-CASINO_BLACKJACK_MAX_BET = int(os.getenv("CASINO_BLACKJACK_MAX_BET", 5000))
+CASINO_BLACKJACK_MAX_BET = int(os.getenv("CASINO_BLACKJACK_MAX_BET", 10000000000000))
 RISKITALL_COOLDOWN_HOURS = int(os.getenv("RISKITALL_COOLDOWN_HOURS", 24))
 # Provocare pariu 1v1 expiră după (minute)
 PVP_BET_EXPIRE_MINUTES = int(os.getenv("PVP_BET_EXPIRE_MINUTES", 5))
@@ -85,7 +85,7 @@ def xp_for_level(level: int) -> int:
 SHOP_ITEMS = {
     "vip_rank": {
         "name": "VIP Rank",
-        "price": 20,
+        "price": 20000,
         "description": "Rang VIP permanent — canale exclusive, culori speciale, prioritate la evenimente.",
         "perks": [
             "Canale exclusive VIP",
@@ -97,7 +97,7 @@ SHOP_ITEMS = {
     },
     "veteran_rank": {
         "name": "Veteran Rank",
-        "price": 40,
+        "price": 40000,
         "description": "Rang suprem — tot ce include VIP, plus beneficii extra.",
         "perks": [
             "Tot ce include VIP",
@@ -110,28 +110,28 @@ SHOP_ITEMS = {
     },
     "custom_colors": {
         "name": "Culori Custom",
-        "price": 5,
+        "price": 5000,
         "description": "Alege culoarea numelui în chat și pe profil.",
         "perks": ["Culoare personalizată", "Schimbări nelimitate", "Gradient disponibil"],
         "tag": None,
     },
     "clan_tag": {
         "name": "Clan Tag",
-        "price": 15,
+        "price": 15000,
         "description": "Tag personalizat pentru clanul tău, vizibil în chat.",
         "perks": ["Tag unic", "Vizibil pe tot serverul", "Editabil oricând"],
         "tag": None,
     },
     "lootbox": {
         "name": "Loot Box",
-        "price": 25,
+        "price": 25000,
         "description": "Cutie cu RDN aleatorii.",
         "perks": ["Deschide pentru surpriză"],
         "tag": None,
     },
     "xp_boost": {
         "name": "XP Boost",
-        "price": 100,
+        "price": 100000,
         "description": "2x XP timp de 24h (activează prin ticket/staff).",
         "perks": ["Boost XP 24 ore"],
         "tag": None,

@@ -22,6 +22,8 @@ class Tips(commands.Cog, name="Tips"):
 
     def __init__(self, bot):
         self.bot = bot
+        if not self.tips_loop.is_running():
+            self.tips_loop.start()
 
     def cog_unload(self):
         self.tips_loop.cancel()
@@ -107,17 +109,13 @@ class Tips(commands.Cog, name="Tips"):
                     )
                 )
                 await db.update_tips_field(guild.id, "last_sent_at", now.isoformat())
-            except Exception:
+            except Exception as e:
+                print(f"[Tips] Eroare pe guild {guild.id}: {e}")
                 continue
 
     @tips_loop.before_loop
     async def before_tips_loop(self):
         await self.bot.wait_until_ready()
-
-    @commands.Cog.listener()
-    async def on_ready(self):
-        if not self.tips_loop.is_running():
-            self.tips_loop.start()
 
     @tips.command(name="setup", description="[Admin] Canalul unde se trimit sfaturile")
     @app_commands.describe(channel="Canal text")
